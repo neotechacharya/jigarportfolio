@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Jigar Acharya — Full Stack Designer - Graphics & UI/UX Team Lead</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Sora:wght@300;400;600;700&display=swap"
+        rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Bebas Neue', 'sans-serif'],
+                        mono: ['DM Mono', 'monospace'],
+                        body: ['Sora', 'sans-serif'],
+                    },
+                    colors: {
+                        ink: '#0a0a0f',
+                        paper: '#f4f0e8',
+                        acid: '#c6f135',
+                        rust: '#e84b2f',
+                        muted: '#8a8a99',
+                        line: '#1e1e2a',
+                    },
+                    animation: {
+                        'fade-up': 'fadeUp 0.8s ease forwards',
+                        'slide-in': 'slideIn 1s ease forwards',
+                        'blink': 'blink 1.2s step-end infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        slideIn: {
+                            '0%': { opacity: '0', transform: 'translateX(-40px)' },
+                            '100%': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        blink: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-14px)' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="grid-bg">
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot cursor-init" id="cursorDot"></div>
+    <div class="cursor-ring cursor-init" id="cursorRing"></div>
+
+    <!-- ── NAV ── -->
+    <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 nav-bar">
+        <span class="font-mono text-xs tracking-widest text-acid uppercase">JA/</span>
+        <div class="flex gap-8 font-mono text-xs tracking-wider text-muted">
+            <a href="#work" class="nav-link hover:text-paper transition-colors">Work</a>
+            <a href="#skills" class="nav-link hover:text-paper transition-colors">Skills</a>
+            <a href="#about" class="nav-link hover:text-paper transition-colors">About</a>
+            <a href="#contact" class="nav-link hover:text-paper transition-colors">Contact</a>
+        </div>
+        <a href="https://www.linkedin.com/in/jigar-acharya-722232ab/"
+            class="font-mono text-xs tracking-widest px-4 py-2 border border-acid text-acid hover:bg-acid hover:text-ink transition-all duration-300">
+            Let’s Connect →
+        </a>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <section
+        class="min-h-screen flex flex-col items-center justify-center relative px-8 pt-24 pb-32 text-center section-container">
+
+        <!-- Radial glow accent -->
+        <div class="absolute pointer-events-none hero-glow">
+        </div>
+
+        <div class="big-number big-number-center">JA</div>
+
+        <!-- Status badge -->
+        <!--<div class="flex items-center gap-2 mb-12 reveal relative z-10 delay-100">
+            <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-acid opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-acid"></span>
+            </span>
+            <span class="font-mono text-xs tracking-widest text-muted uppercase">Available for new projects ·
+                2026</span>
+            </div>
+
+        <!-- Name -->
+        <div class="hero-line mb-2 relative z-10">
+            <span class="font-display text-paper leading-none tracking-wide text-hero-name delay-150">
+                JIGAR
+            </span>
+        </div>
+        <div class="hero-line mb-8 relative z-10">
+            <span class="font-display leading-none tracking-wide text-hero-outline delay-300">
+                ACHARYA
+            </span>
+        </div>
+
+        <!-- Decorative line -->
+        <div class="flex items-center gap-4 mb-8 reveal relative z-10 delay-400">
+            <span class="block h-px w-12 line-gradient-right"></span>
+            <span class="font-mono text-xs tracking-[0.3em] text-muted uppercase">Full Stack Designer - Graphics & UI/UX
+                Team Lead</span>
+            <span class="block h-px w-12 line-gradient-left"></span>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 mb-10 reveal relative z-10 delay-500">
+            <a href="mailto:jigaracharya3@gmail.com"
+                class="font-mono text-sm tracking-widest px-8 py-3.5 bg-acid text-ink font-medium hover:shadow-lg transition-all duration-300 hover:-translate-y-1 btn-glow-acid-lg">
+                jigaracharya3@gmail.com ↗
+            </a>
+            <a href="https://www.linkedin.com/in/jigar-acharya-722232ab/" target="_blank"
+                class="font-mono text-sm tracking-widest px-8 py-3.5 border border-white border-opacity-20 text-muted hover:text-paper hover:border-opacity-50 transition-all duration-300">
+                LinkedIn →
+            </a>
+        </div>
+
+        <!-- Tagline -->
+        <p
+            class="text-muted font-body font-light leading-relaxed max-w-2xl mx-auto reveal relative z-10 text-body-md delay-650">
+            I craft digital experiences where
+            <em class="text-paper not-italic font-normal">design thinking meets</em>
+            <em class="text-acid not-italic font-normal">engineering precision</em> — guiding teams to transform complex
+            SaaS challenges into intuitive, business-driven products.
+        </p>
+
+        <!-- Stats bar — centered in flow -->
+        <div class="flex justify-center gap-10 mt-12 reveal relative z-10 delay-750">
+            <div class="text-center">
+                <p class="font-display text-acid text-stat">9+</p>
+                <p class="font-mono text-xs text-muted tracking-widest uppercase">Years Exp</p>
+            </div>
+            <div class="w-px self-stretch divider-v"></div>
+            <div class="text-center">
+                <p class="font-display text-paper text-stat">40+</p>
+                <p class="font-mono text-xs text-muted tracking-widest uppercase">Projects</p>
+            </div>
+            <div class="w-px self-stretch divider-v"></div>
+            <div class="text-center">
+                <p class="font-display text-paper text-stat">8+</p>
+                <p class="font-mono text-xs text-muted tracking-widest uppercase">Team Members</p>
+            </div>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 mt-10 reveal relative z-10 delay-850">
+            <a href="#work"
+                class="font-mono text-sm tracking-widest px-8 py-3.5 bg-acid text-ink font-medium hover:shadow-lg transition-all duration-300 hover:-translate-y-1 btn-glow-acid-lg">
+                View My Work ↓
+            </a>
+            <a href="https://www.linkedin.com/in/jigar-acharya-722232ab/"
+                class="font-mono text-sm tracking-widest px-8 py-3.5 border border-white border-opacity-15 text-muted hover:text-paper hover:border-opacity-40 transition-all duration-300">
+                Get in Touch →
+            </a>
+        </div>
+
+        <!-- Scroll hint -->
+        <div class="flex flex-col items-center gap-2 mt-14 reveal delay-1000">
+            <span class="font-mono text-[10px] text-muted tracking-[0.25em] uppercase">Scroll</span>
+            <div class="w-px h-8 bg-acid opacity-40 animate-float"></div>
+        </div>
+    </section>
+
+    <!-- ── MARQUEE ── -->
+    <div class="overflow-hidden border-y py-4 marquee-bar">
+        <div class="flex gap-12 whitespace-nowrap marquee-track">
+            <span class="font-display text-3xl text-acid tracking-widest">DESIGN</span>
+            <span class="font-display text-3xl text-muted tracking-widest">·</span>
+            <span class="font-display text-3xl text-paper tracking-widest">DEVELOP</span>
+            <span class="font-display text-3xl text-muted tracking-widest">·</span>
+            <span class="font-display text-3xl text-acid tracking-widest">LEAD</span>
+            <span class="font-display text-3xl text-muted tracking-widest">·</span>
+            <span class="font-display text-3xl text-paper tracking-widest">INNOVATE</span>
+            <span class="font-display text-3xl text-muted tracking-widest">·</span>
+            <span class="font-display text-3xl text-acid tracking-widest">DESIGN</span>
+            <span class="font-display text-3xl text-muted tracking-widest">·</span>
+            <span class="font-display text-3xl text-paper tracking-widest">DEVELOP</span>
+            <span class="font-display text-3xl text-muted tracking-widest">·</span>
+            <span class="font-display text-3xl text-acid tracking-widest">LEAD</span>
+            <span class="font-display text-3xl text-muted tracking-widest">·</span>
+            <span class="font-display text-3xl text-paper tracking-widest">INNOVATE</span>
+            <span class="font-display text-3xl text-muted tracking-widest">·</span>
+        </div>
+    </div>
+
+
+    <!-- ── WORK ── -->
+    <section id="work" class="py-28 px-8 section-container">
+        <div class="text-center mb-16 reveal">
+            <p class="font-mono text-xs text-acid tracking-widest mb-3 uppercase">02 — Selected Work</p>
+            <h2 class="font-display text-paper text-section-heading">
+                FEATURED PROJECTS</h2>
+            <!-- <a href="#"
+                class="inline-block mt-4 font-mono text-xs text-muted hover:text-paper tracking-widest transition-colors pb-1 border-b border-muted hover:border-paper">View
+                All →</a> -->
+        </div>
+
+        <div class="grid gap-6 grid-auto-320">
+
+            <!-- Card 1 -->
+            <a href="callhippo.html"
+                class="project-card rounded-none p-8 reveal delay-100 block no-underline cursor-pointer">
+                <div class="flex items-center justify-between mb-6">
+                    <span class="font-mono text-xs text-acid tracking-widest">01</span>
+                    <span class="font-mono text-xs text-muted tracking-widest">SAAS · WEBSITE + WEB APP</span>
+                </div>
+                <div class="w-full h-40 mb-6 rounded-sm overflow-hidden card-img-border-acid">
+                    <img src="ch-prjbanner.jpg" alt="CallHippo" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="font-display text-paper text-3xl mb-2">CallHippo</h3>
+                <p class="font-body text-muted text-sm leading-relaxed mb-6">Website development in WordPress with UI/UX
+                    design focused on improving conversion rates. Designed and built the web application front-end in
+                    React.</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="skill-tag font-mono text-xs px-3 py-1 text-acid">WordPress</span>
+                    <span class="skill-tag font-mono text-xs px-3 py-1 text-acid">React</span>
+                    <span class="skill-tag font-mono text-xs px-3 py-1 text-acid">UI/UX</span>
+                    <span class="skill-tag font-mono text-xs px-3 py-1 text-acid">Figma</span>
+                </div>
+                <span class="font-mono text-xs text-paper hover:text-acid transition-colors tracking-widest">Case
+                    Study →</span>
+            </a>
+
+            <!-- Card 2 -->
+            <a href="softwaresuggest.html"
+                class="project-card rounded-none p-8 reveal delay-200 block no-underline cursor-pointer">
+                <div class="flex items-center justify-between mb-6">
+                    <span class="font-mono text-xs text-rust tracking-widest">02</span>
+                    <span class="font-mono text-xs text-muted tracking-widest">B2B MARKETPLACE · Website</span>
+                </div>
+                <div class="w-full h-40 mb-6 rounded-sm overflow-hidden card-img-border-rust">
+                    <img src="ss_prjbanner.jpg" alt="SoftwareSuggest" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="font-display text-paper text-3xl mb-2">SoftwareSuggest</h3>
+                <p class="font-body text-muted text-sm leading-relaxed mb-6">UI/UX design and front-end development for
+                    a B2B software discovery platform — category listing pages and product profile pages built on Yii
+                    PHP with Bootstrap.</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="skill-tag font-mono text-xs px-3 py-1 text-acid">Bootstrap</span>
+                    <span class="skill-tag font-mono text-xs px-3 py-1 text-acid">Yii/PHP</span>
+                    <span class="skill-tag font-mono text-xs px-3 py-1 text-acid">UI/UX</span>
+                    <span class="skill-tag font-mono text-xs px-3 py-1 text-acid">Figma</span>
+                </div>
+                <span class="font-mono text-xs text-paper hover:text-acid transition-colors tracking-widest">Case
+                    Study →</span>
+            </a>
+
+            <!-- Card 3 -->
+            <a href="controlhippo.html"
+                class="project-card rounded-none p-8 reveal delay-300 block no-underline cursor-pointer">
+                <div class="flex items-center justify-between mb-6">
+                    <span class="font-mono text-xs text-paper tracking-widest">03</span>
+                    <span class="font-mono text-xs text-muted tracking-widest">SAAS · WEBSITE + WEB APP</span>
+                </div>
+                <div class="w-full h-40 mb-6 rounded-sm overflow-hidden card-img-border-blue">
+                    <img src="contr_prbanner.jpg" alt="ControlHippo" class="w-full h-full object-cover" />
+                </div>
+                <h3 class="font-display text-paper text-3xl mb-2">ControlHippo</h3>
+                <p class="font-body text-muted text-sm leading-relaxed mb-6">WordPress website development and React web
+                    application for an omnichannel conversational AI platform powering sales & support teams.</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="skill-tag font-mono text-xs px-3 py-1 text-acid">WordPress</span>
+                    <span class="skill-tag font-mono text-xs px-3 py-1 text-acid">React</span>
+                    <span class="skill-tag font-mono text-xs px-3 py-1 text-acid">UI/UX</span>
+                    <span class="skill-tag font-mono text-xs px-3 py-1 text-acid">Figma</span>
+                </div>
+                <span class="font-mono text-xs text-paper hover:text-acid transition-colors tracking-widest">Case
+                    Study →</span>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- ── SKILLS ── -->
+    <section id="skills" class="py-28 px-8 relative pt-0 section-border-top section-container">
+
+
+        <div class="relative z-10">
+            <p class="font-mono text-xs text-acid tracking-widest mb-3 uppercase reveal text-center">03 — Expertise</p>
+            <h2 class="font-display text-paper mb-16 reveal text-center text-section-heading">
+                SKILLS & TOOLS</h2>
+
+            <div class="grid gap-12 grid-auto-260">
+
+                <!-- Design -->
+                <div class="reveal delay-100">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="w-8 h-px bg-acid"></span>
+                        <h3 class="font-mono text-sm text-acid tracking-widest uppercase">Design</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between font-mono text-xs text-muted mb-2">
+                                <span>UI/UX Design</span><span class="text-acid">95%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width:95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between font-mono text-xs text-muted mb-2">
+                                <span>Design Systems</span><span class="text-acid">90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width:90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between font-mono text-xs text-muted mb-2">
+                                <span>Figma / Prototyping</span><span class="text-acid">98%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width:98%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between font-mono text-xs text-muted mb-2">
+                                <span>Motion Design</span><span class="text-acid">80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width:80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Development -->
+                <div class="reveal delay-200">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="w-8 h-px bg-rust"></span>
+                        <h3 class="font-mono text-sm text-rust tracking-widest uppercase">Development</h3>
+                    </div>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between font-mono text-xs text-muted mb-2">
+                                <span>React / Next.js</span><span class="text-acid">92%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width:92%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between font-mono text-xs text-muted mb-2">
+                                <span>Node.js / API</span><span class="text-acid">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width:85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between font-mono text-xs text-muted mb-2">
+                                <span>TypeScript</span><span class="text-acid">65%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width:65%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between font-mono text-xs text-muted mb-2">
+                                <span>Tailwind & Bootstrap CSS</span><span class="text-acid">96%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width:96%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leadership -->
+                <div class="reveal delay-300">
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="w-8 h-px bg-paper opacity-40"></span>
+                        <h3 class="font-mono text-sm text-paper tracking-widest uppercase">Leadership</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag font-mono text-xs px-3 py-2 text-acid">Team Management</span>
+                        <span class="skill-tag font-mono text-xs px-3 py-2 text-acid">Agile / Scrum</span>
+                        <span class="skill-tag font-mono text-xs px-3 py-2 text-acid">Product Strategy</span>
+                        <span class="skill-tag font-mono text-xs px-3 py-2 text-acid">Code Reviews</span>
+                        <span class="skill-tag font-mono text-xs px-3 py-2 text-acid">Mentoring</span>
+                        <span class="skill-tag font-mono text-xs px-3 py-2 text-acid">Roadmapping</span>
+                        <span class="skill-tag font-mono text-xs px-3 py-2 text-acid">Stakeholder Comms</span>
+                        <span class="skill-tag font-mono text-xs px-3 py-2 text-acid">Sprint Planning</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── ABOUT ── -->
+    <section id="about" class="py-28 px-8 relative pt-0 section-border-top section-container">
+        <div class="grid gap-16 grid-2col">
+            <div class="reveal">
+                <p class="font-mono text-xs text-acid tracking-widest mb-4 uppercase">04 — About</p>
+                <h2 class="font-display text-paper mb-8 text-about-heading">THE
+                    PERSON<br />BEHIND THE<br />PIXELS</h2>
+                <div class="space-y-4 text-muted font-body font-light leading-relaxed text-sm">
+                    <p>I'm <span class="text-paper">Jigar Acharya</span>, a Full Stack Designer and Team Lead with a
+                        passion for building products that are as elegant under the hood as they are on screen.</p>
+                    <p>With over 9 years in the industry, I've worn many hats — designer, developer, strategist, and
+                        leader — which gives me a rare ability to bridge the gap between <span
+                            class="text-acid">creative vision</span> and <span class="text-acid">technical
+                            execution</span>.</p>
+                    <p>When I lead teams, I focus on creating an environment where great ideas surface, ownership is
+                        shared, and shipping quality work is the culture — not the exception.</p>
+                </div>
+            </div>
+
+            <div class="reveal delay-200">
+                <!-- Timeline -->
+                <div class="space-y-8 pt-14">
+                    <div class="flex gap-5 group">
+                        <div class="flex flex-col items-center">
+                            <span
+                                class="w-3 h-3 rounded-full border-2 border-acid bg-ink group-hover:bg-acid transition-colors"></span>
+                            <span class="w-px flex-1 bg-line mt-2"></span>
+                        </div>
+                        <div class="pb-8">
+                            <p class="font-mono text-xs text-acid tracking-widest mb-1">2020 — PRESENT</p>
+                            <h4 class="font-body text-paper font-semibold mb-1">Team Lead & Full Stack Designer</h4>
+                            <p class="font-mono text-xs text-muted">Leading product design & development team of 12</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-5 group">
+                        <div class="flex flex-col items-center">
+                            <span
+                                class="w-3 h-3 rounded-full border-2 border-muted bg-ink group-hover:border-acid transition-colors"></span>
+                            <span class="w-px flex-1 bg-line mt-2"></span>
+                        </div>
+                        <div class="pb-8">
+                            <p class="font-mono text-xs text-muted tracking-widest mb-1">2019 — 2020</p>
+                            <h4 class="font-body text-paper font-semibold mb-1">Senior UI/UX Designer & Frontend Dev
+                            </h4>
+                            <p class="font-mono text-xs text-muted">Designed & built 15+ client products end-to-end</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-5 group">
+                        <div class="flex flex-col items-center">
+                            <span
+                                class="w-3 h-3 rounded-full border-2 border-muted bg-ink group-hover:border-acid transition-colors"></span>
+                        </div>
+                        <div>
+                            <p class="font-mono text-xs text-muted tracking-widest mb-1">2018 — 2019</p>
+                            <h4 class="font-body text-paper font-semibold mb-1">UI Designer & Junior Developer</h4>
+                            <p class="font-mono text-xs text-muted">Started at the intersection of design and code</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── CONTACT ── -->
+    <section id="contact" class="py-28 px-8 relative text-center section-border-top">
+        <div class="big-number big-number-top-center">05</div>
+        <div class="relative z-10 max-w-2xl mx-auto">
+            <p class="font-mono text-xs text-acid tracking-widest mb-4 uppercase reveal">05 — Contact</p>
+            <h2 class="font-display text-paper mb-6 reveal text-section-heading-lg">
+                LET'S BUILD<br />SOMETHING<br /><span class="text-stroke-outline">GREAT</span>
+            </h2>
+            <p class="text-muted font-body font-light mb-10 reveal delay-200">
+                Open to full-time roles, freelance work, and interesting collaborations.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center reveal delay-300">
+                <a href="mailto:jigaracharya3@gmail.com"
+                    class="font-mono text-sm tracking-widest px-8 py-4 bg-acid text-ink font-medium hover:bg-opacity-90 transition-all hover:-translate-y-1 hover:shadow-lg">
+                    jigaracharya3@gmail.com ↗
+                </a>
+                <a href="https://www.linkedin.com/in/jigar-acharya-722232ab/" target="_blank"
+                    class="font-mono text-sm tracking-widest px-8 py-4 border border-white border-opacity-20 text-muted hover:text-paper hover:border-opacity-50 transition-all">
+                    LinkedIn →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer class="px-8 py-8 flex items-center justify-between section-border-top">
+        <span class="font-mono text-xs text-muted tracking-widest">© 2025 JIGAR ACHARYA</span>
+        <span class="font-mono text-xs text-muted tracking-widest">FULL STACK DESIGNER · TEAM LEAD</span>
+        <span class="font-mono text-xs text-acid tracking-widest">MADE WITH PRECISION ✦</span>
+    </footer>
+
+    <!-- ── JS ── -->
+    <script>
+        // Reveal on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.12 });
+        reveals.forEach(el => observer.observe(el));
+
+        // Custom cursor
+        const dot = document.getElementById('cursorDot');
+        const ring = document.getElementById('cursorRing');
+        let rx = -100, ry = -100; // current ring pos
+        let tx = -100, ty = -100; // target ring pos (mouse pos)
+
+        document.addEventListener('mousemove', e => {
+            dot.style.left = e.clientX + 'px';
+            dot.style.top = e.clientY + 'px';
+            tx = e.clientX;
+            ty = e.clientY;
+        });
+
+        function animateRing() {
+            rx += (tx - rx) * 0.15;
+            ry += (ty - ry) * 0.15;
+            ring.style.left = rx + 'px';
+            ring.style.top = ry + 'px';
+            requestAnimationFrame(animateRing);
+        }
+        animateRing();
+
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                ring.style.transform = 'translate(-50%,-50%) scale(1.6)';
+                ring.style.borderColor = '#c6f135';
+            });
+            el.addEventListener('mouseleave', () => {
+                ring.style.transform = 'translate(-50%,-50%) scale(1)';
+                ring.style.borderColor = 'rgba(198,241,53,0.5)';
+            });
+        });
+    </script>
+</body>
+
+</html>

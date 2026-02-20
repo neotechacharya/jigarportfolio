@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>CallHippo — Case Study | Jigar Acharya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Sora:wght@300;400;600;700&display=swap"
+        rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Bebas Neue', 'sans-serif'],
+                        mono: ['DM Mono', 'monospace'],
+                        body: ['Sora', 'sans-serif'],
+                    },
+                    colors: {
+                        ink: '#0a0a0f',
+                        paper: '#f4f0e8',
+                        acid: '#c6f135',
+                        rust: '#e84b2f',
+                        muted: '#8a8a99',
+                        line: '#1e1e2a',
+                    },
+                },
+            },
+        }
+    </script>
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="grid-bg">
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot cursor-init" id="cursorDot"></div>
+    <div class="cursor-ring cursor-init" id="cursorRing"></div>
+
+    <!-- ── NAV ── -->
+    <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 nav-bar">
+        <a href="index.html" class="font-mono text-xs tracking-widest text-acid uppercase">JA/</a>
+        <div class="flex gap-8 font-mono text-xs tracking-wider text-muted">
+            <a href="index.html#work" class="nav-link hover:text-paper transition-colors">Work</a>
+            <a href="index.html#skills" class="nav-link hover:text-paper transition-colors">Skills</a>
+            <a href="index.html#about" class="nav-link hover:text-paper transition-colors">About</a>
+            <a href="index.html#contact" class="nav-link hover:text-paper transition-colors">Contact</a>
+        </div>
+        <a href="mailto:jigar@example.com"
+            class="font-mono text-xs tracking-widest px-4 py-2 border border-acid text-acid hover:bg-acid hover:text-ink transition-all duration-300">
+            Hire Me →
+        </a>
+    </nav>
+
+    <!-- ── HERO BANNER ── -->
+    <section class="pt-28 pb-16 px-8 section-container">
+
+        <!-- Back link -->
+        <div class="flex justify-start mb-10 reveal">
+            <a href="index.html#work"
+                class="font-mono text-xs text-muted hover:text-acid tracking-widest transition-colors flex items-center gap-2">
+                ← Back to Projects
+            </a>
+        </div>
+
+        <!-- Two-column layout -->
+        <div class="grid items-center gap-12 reveal grid-2col delay-100">
+
+            <!-- Left: Content -->
+            <div>
+                <!-- Project badge -->
+                <div class="flex items-center gap-2 mb-6">
+                    <span
+                        class="font-mono text-xs tracking-widest text-acid uppercase px-3 py-1 border border-acid border-opacity-30 badge-acid">CASE
+                        STUDY</span>
+                    <span class="font-mono text-xs tracking-widest text-muted uppercase">· 01</span>
+                </div>
+
+
+
+                <!-- Title -->
+                <h1 class="font-display text-paper mb-4 text-case-hero">
+                    CALLHIPPO
+                </h1>
+
+                <!-- Subtitle -->
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="block h-px w-8 line-gradient-left"></span>
+                    <span class="font-mono text-xs tracking-[0.2em] text-muted uppercase">SAAS · Website + Web
+                        Application</span>
+                </div>
+
+                <!-- Description -->
+                <p class="text-muted font-body font-light leading-relaxed mb-8 text-body-sm">
+                    A comprehensive design and development engagement spanning
+                    <em class="text-paper not-italic">WordPress website</em> creation,
+                    <em class="text-acid not-italic">UI/UX design</em> for conversion optimization, and
+                    <em class="text-paper not-italic">React-based web application</em> front-end development.
+                </p>
+
+                <!-- Quick info row -->
+                <div class="flex flex-wrap gap-8">
+                    <div>
+                        <p class="font-mono text-xs text-muted tracking-widest uppercase mb-1">Role</p>
+                        <p class="font-body text-paper text-sm font-medium">Full Stack Designer</p>
+                    </div>
+                    <div class="w-px self-stretch divider-v"></div>
+                    <div>
+                        <p class="font-mono text-xs text-muted tracking-widest uppercase mb-1">Industry</p>
+                        <p class="font-body text-paper text-sm font-medium">SaaS / VoIP</p>
+                    </div>
+                    <div class="w-px self-stretch divider-v"></div>
+                    <div>
+                        <p class="font-mono text-xs text-muted tracking-widest uppercase mb-1">Stack</p>
+                        <p class="font-body text-paper text-sm font-medium">WordPress · React · Figma</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Banner image -->
+            <div>
+                <div class="rounded-sm overflow-hidden card-img-border-acid-light">
+                    <img src="ch-prjbanner.jpg" alt="CallHippo Banner" class="w-full h-auto object-cover" />
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── TABS ── -->
+    <section class="px-8 pb-28 section-container">
+
+        <!-- Tab bar -->
+        <div class="flex justify-center gap-0 mb-16 reveal delay-600 tab-border-bottom">
+            <button
+                class="tab-btn active font-mono text-sm tracking-widest text-acid px-6 py-4 cursor-pointer bg-transparent border-none outline-none"
+                data-tab="tab-website" onclick="switchTab('tab-website', this)">
+                Website Development & UI/UX
+            </button>
+            <button
+                class="tab-btn font-mono text-sm tracking-widest text-muted px-6 py-4 cursor-pointer bg-transparent border-none outline-none"
+                data-tab="tab-webapp" onclick="switchTab('tab-webapp', this)">
+                Web Application & UI/UX
+            </button>
+        </div>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- TAB 1: Website Development & UI/UX         -->
+        <!-- ═══════════════════════════════════════════ -->
+        <div id="tab-website" class="tab-panel active">
+
+            <!-- Overview -->
+            <div class="mb-20 reveal">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="w-8 h-px bg-acid"></span>
+                    <h2 class="font-mono text-sm text-acid tracking-widest uppercase">Overview</h2>
+                </div>
+                <div class="grid gap-8 grid-2col">
+                    <div>
+                        <h3 class="font-display text-paper text-2xl mb-4">THE CHALLENGE</h3>
+                        <p class="text-muted font-body font-light leading-relaxed text-sm">
+                            CallHippo needed a high-converting marketing website that clearly communicated their VoIP
+                            product offerings, built on WordPress for easy content management. The existing site had
+                            low engagement and poor conversion metrics that needed to be addressed through
+                            strategic design and development.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-paper text-2xl mb-4">THE SOLUTION</h3>
+                        <p class="text-muted font-body font-light leading-relaxed text-sm">
+                            I designed and developed a complete WordPress website with a focus on conversion-optimized
+                            UI/UX. Every page was crafted to guide users through the sales funnel with clear CTAs,
+                            engaging visuals, and persuasive layout patterns that improved both engagement and
+                            conversion rates.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Process -->
+            <div class="mb-20 reveal">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="w-8 h-px bg-acid"></span>
+                    <h2 class="font-mono text-sm text-acid tracking-widest uppercase">Design Process</h2>
+                </div>
+                <div class="max-w-2xl space-y-0">
+                    <div class="process-step pb-8">
+                        <h4 class="font-body text-paper font-semibold mb-1">Research & Competitive Analysis</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Analyzed competitor websites in the VoIP/SaaS space, identified user pain points,
+                            and mapped out the ideal customer journey from landing page to conversion.
+                        </p>
+                    </div>
+                    <div class="process-step pb-8">
+                        <h4 class="font-body text-paper font-semibold mb-1">Wireframing & Information Architecture</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Created detailed wireframes in Figma to establish the page hierarchy, content flow,
+                            and CTA placement strategy optimized for maximum user engagement.
+                        </p>
+                    </div>
+                    <div class="process-step pb-8">
+                        <h4 class="font-body text-paper font-semibold mb-1">Visual Design & Prototyping</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Developed high-fidelity UI designs with a modern, professional aesthetic that aligned
+                            with CallHippo's brand identity. Created interactive prototypes for stakeholder review.
+                        </p>
+                    </div>
+                    <div class="process-step pb-8">
+                        <h4 class="font-body text-paper font-semibold mb-1">WordPress Development</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Built the complete website in WordPress with custom themes and responsive layouts.
+                            Ensured fast loading speeds, SEO optimization, and easy content management for the team.
+                        </p>
+                    </div>
+                    <div class="process-step">
+                        <h4 class="font-body text-paper font-semibold mb-1">Testing & Conversion Optimization</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Conducted A/B testing on key landing pages, refined CTAs, and optimized the
+                            user flow to improve conversion rates and reduce bounce rates.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key deliverables -->
+            <div class="mb-20 reveal">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="w-8 h-px bg-acid"></span>
+                    <h2 class="font-mono text-sm text-acid tracking-widest uppercase">Key Deliverables</h2>
+                </div>
+                <div class="grid gap-4 grid-auto-220">
+                    <div class="detail-card p-6">
+                        <span class="font-display text-acid text-4xl opacity-20">01</span>
+                        <h4 class="font-body text-paper font-semibold mt-2 mb-2">Website Design</h4>
+                        <p class="text-muted text-xs font-body font-light leading-relaxed">Complete UI/UX design for all
+                            pages including homepage, pricing, features, and blog.</p>
+                    </div>
+                    <div class="detail-card p-6">
+                        <span class="font-display text-acid text-4xl opacity-20">02</span>
+                        <h4 class="font-body text-paper font-semibold mt-2 mb-2">WordPress Dev</h4>
+                        <p class="text-muted text-xs font-body font-light leading-relaxed">Custom WordPress theme
+                            development with responsive design and SEO best practices.</p>
+                    </div>
+                    <div class="detail-card p-6">
+                        <span class="font-display text-acid text-4xl opacity-20">03</span>
+                        <h4 class="font-body text-paper font-semibold mt-2 mb-2">CRO Strategy</h4>
+                        <p class="text-muted text-xs font-body font-light leading-relaxed">Conversion rate optimization
+                            through strategic CTA placement and user flow refinement.</p>
+                    </div>
+                    <div class="detail-card p-6">
+                        <span class="font-display text-acid text-4xl opacity-20">04</span>
+                        <h4 class="font-body text-paper font-semibold mt-2 mb-2">Performance</h4>
+                        <p class="text-muted text-xs font-body font-light leading-relaxed">Optimized page speeds, lazy
+                            loading, and caching for lightning-fast user experiences.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Performance -->
+            <div class="mb-20 reveal">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="w-8 h-px bg-acid"></span>
+                    <h2 class="font-mono text-sm text-acid tracking-widest uppercase">Page Performance</h2>
+                </div>
+                <p class="text-muted font-body font-light leading-relaxed text-sm mb-10 max-w-prose">
+                    Performance was a key focus throughout the build. Every page was optimized for
+                    <em class="text-paper not-italic">Core Web Vitals</em> — minimizing Largest Contentful Paint (LCP),
+                    reducing Cumulative Layout Shift (CLS), and ensuring fast First Input Delay (FID)
+                    to deliver a smooth, high-performing experience across all devices.
+                </p>
+                <div class="grid gap-6 grid-auto-240">
+                    <!-- Mobile Score -->
+                    <div class="detail-card p-8 text-center">
+                        <p class="font-mono text-xs text-muted tracking-widest uppercase mb-4">Mobile PageSpeed</p>
+                        <div class="score-circle-wrap">
+                            <svg viewBox="0 0 120 120" class="score-circle-svg">
+                                <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(198,241,53,0.1)"
+                                    stroke-width="8" />
+                                <circle cx="60" cy="60" r="52" fill="none" stroke="#c6f135" stroke-width="8"
+                                    stroke-dasharray="326.7" stroke-dashoffset="49" stroke-linecap="round" />
+                            </svg>
+                            <span
+                                class="font-display text-acid absolute inset-0 flex items-center justify-center text-stat">85</span>
+                        </div>
+                        <p class="font-mono text-xs text-muted tracking-wider">Google Lighthouse</p>
+                    </div>
+                    <!-- Desktop Score -->
+                    <div class="detail-card p-8 text-center">
+                        <p class="font-mono text-xs text-muted tracking-widest uppercase mb-4">Desktop PageSpeed</p>
+                        <div class="score-circle-wrap">
+                            <svg viewBox="0 0 120 120" class="score-circle-svg">
+                                <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(198,241,53,0.1)"
+                                    stroke-width="8" />
+                                <circle cx="60" cy="60" r="52" fill="none" stroke="#c6f135" stroke-width="8"
+                                    stroke-dasharray="326.7" stroke-dashoffset="6.5" stroke-linecap="round" />
+                            </svg>
+                            <span
+                                class="font-display text-acid absolute inset-0 flex items-center justify-center text-stat">98</span>
+                        </div>
+                        <p class="font-mono text-xs text-muted tracking-wider">Google Lighthouse</p>
+                    </div>
+                    <!-- Core Web Vitals -->
+                    <div class="detail-card p-8">
+                        <p class="font-mono text-xs text-muted tracking-widest uppercase mb-6">Core Web Vitals</p>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-mono text-xs text-paper">LCP</span>
+                                    <span class="font-mono text-xs text-acid">Passed</span>
+                                </div>
+                                <div class="w-full h-1 rounded perf-bar-track">
+                                    <div class="h-1 rounded bg-acid" style="width:92%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-mono text-xs text-paper">FID</span>
+                                    <span class="font-mono text-xs text-acid">Passed</span>
+                                </div>
+                                <div class="w-full h-1 rounded perf-bar-track">
+                                    <div class="h-1 rounded bg-acid" style="width:96%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-mono text-xs text-paper">CLS</span>
+                                    <span class="font-mono text-xs text-acid">Passed</span>
+                                </div>
+                                <div class="w-full h-1 rounded perf-bar-track">
+                                    <div class="h-1 rounded bg-acid" style="width:98%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Landing Pages -->
+            <div class="mb-20 reveal">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="w-8 h-px bg-acid"></span>
+                    <h2 class="font-mono text-sm text-acid tracking-widest uppercase">Key Landing Pages</h2>
+                </div>
+                <div class="grid gap-3 grid-auto-280">
+                    <a href="https://d1x9dsge91xf6g.cloudfront.net/callhippo/files/brand_guidelines_new.pdf"
+                        target="_blank" class="detail-card p-5 flex items-center gap-4 group no-underline">
+                        <span
+                            class="font-display text-rust text-2xl opacity-20 group-hover:opacity-50 transition-opacity">↗</span>
+                        <div>
+                            <p class="font-body text-paper text-sm font-medium group-hover:text-rust transition-colors">
+                                Brand Guidelines</p>
+                            <p class="font-mono text-xs text-muted truncate">callhippo.com</p>
+                        </div>
+                    </a>
+                    <a href="https://callhippo.com/" target="_blank"
+                        class="detail-card p-5 flex items-center gap-4 group no-underline">
+                        <span
+                            class="font-display text-acid text-2xl opacity-20 group-hover:opacity-50 transition-opacity">↗</span>
+                        <div>
+                            <p class="font-body text-paper text-sm font-medium group-hover:text-acid transition-colors">
+                                Homepage</p>
+                            <p class="font-mono text-xs text-muted truncate">callhippo.com</p>
+                        </div>
+                    </a>
+                    <a href="https://callhippo.com/ai/" target="_blank"
+                        class="detail-card p-5 flex items-center gap-4 group no-underline">
+                        <span
+                            class="font-display text-acid text-2xl opacity-20 group-hover:opacity-50 transition-opacity">↗</span>
+                        <div>
+                            <p class="font-body text-paper text-sm font-medium group-hover:text-acid transition-colors">
+                                AI Platform</p>
+                            <p class="font-mono text-xs text-muted truncate">callhippo.com/ai</p>
+                        </div>
+                    </a>
+                    <a href="https://callhippo.com/ai-voice-agent/" target="_blank"
+                        class="detail-card p-5 flex items-center gap-4 group no-underline">
+                        <span
+                            class="font-display text-acid text-2xl opacity-20 group-hover:opacity-50 transition-opacity">↗</span>
+                        <div>
+                            <p class="font-body text-paper text-sm font-medium group-hover:text-acid transition-colors">
+                                AI Voice Agent</p>
+                            <p class="font-mono text-xs text-muted truncate">callhippo.com/ai-voice-agent</p>
+                        </div>
+                    </a>
+                    <a href="https://callhippo.com/ai-copilot/" target="_blank"
+                        class="detail-card p-5 flex items-center gap-4 group no-underline">
+                        <span
+                            class="font-display text-acid text-2xl opacity-20 group-hover:opacity-50 transition-opacity">↗</span>
+                        <div>
+                            <p class="font-body text-paper text-sm font-medium group-hover:text-acid transition-colors">
+                                AI Copilot</p>
+                            <p class="font-mono text-xs text-muted truncate">callhippo.com/ai-copilot</p>
+                        </div>
+                    </a>
+                    <a href="https://callhippo.com/pricing/" target="_blank"
+                        class="detail-card p-5 flex items-center gap-4 group no-underline">
+                        <span
+                            class="font-display text-acid text-2xl opacity-20 group-hover:opacity-50 transition-opacity">↗</span>
+                        <div>
+                            <p class="font-body text-paper text-sm font-medium group-hover:text-acid transition-colors">
+                                Pricing</p>
+                            <p class="font-mono text-xs text-muted truncate">callhippo.com/pricing</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- Tools -->
+            <div class="reveal">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="w-8 h-px bg-acid"></span>
+                    <h2 class="font-mono text-sm text-acid tracking-widest uppercase">Tools Used</h2>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <span
+                        class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid tool-tag-acid">WordPress</span>
+                    <span
+                        class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid tool-tag-acid">Figma</span>
+                    <span
+                        class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid tool-tag-acid">PHP</span>
+                    <span
+                        class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid tool-tag-acid">HTML/CSS</span>
+                    <span
+                        class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid tool-tag-acid">JavaScript</span>
+                    <span
+                        class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid tool-tag-acid">Google
+                        Analytics</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- TAB 2: Web Application & UI/UX             -->
+        <!-- ═══════════════════════════════════════════ -->
+        <div id="tab-webapp" class="tab-panel">
+
+            <!-- Overview -->
+            <div class="mb-20 reveal visible">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="w-8 h-px bg-rust"></span>
+                    <h2 class="font-mono text-sm text-rust tracking-widest uppercase">Overview</h2>
+                </div>
+                <div class="grid gap-8 grid-2col">
+                    <div>
+                        <h3 class="font-display text-paper text-2xl mb-4">THE CHALLENGE</h3>
+                        <p class="text-muted font-body font-light leading-relaxed text-sm">
+                            The CallHippo web application needed a modern, intuitive interface that could handle
+                            complex VoIP workflows while remaining accessible to users of all technical levels.
+                            The existing application UI was cluttered and led to high support ticket volumes.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-paper text-2xl mb-4">THE SOLUTION</h3>
+                        <p class="text-muted font-body font-light leading-relaxed text-sm">
+                            I redesigned the entire web application UI/UX in Figma and built the front-end in React.
+                            The new interface featured a streamlined dashboard, simplified call management flows,
+                            and a component-based architecture that ensured consistency and scalability.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Process -->
+            <div class="mb-20 reveal visible">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="w-8 h-px bg-rust"></span>
+                    <h2 class="font-mono text-sm text-rust tracking-widest uppercase">Design & Dev Process</h2>
+                </div>
+                <div class="max-w-2xl space-y-0">
+                    <div class="process-step pb-8" style="--step-color: #e84b2f;">
+                        <h4 class="font-body text-paper font-semibold mb-1">User Research & Audit</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Analyzed existing user flows, identified friction points in the call management
+                            workflows, and gathered feedback from both support teams and end users.
+                        </p>
+                    </div>
+                    <div class="process-step pb-8">
+                        <h4 class="font-body text-paper font-semibold mb-1">Design System Creation</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Built a comprehensive design system in Figma with reusable components, tokens,
+                            and guidelines to ensure visual consistency across the entire application.
+                        </p>
+                    </div>
+                    <div class="process-step pb-8">
+                        <h4 class="font-body text-paper font-semibold mb-1">UI/UX Design & Prototyping</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Designed all application screens — dashboard, call logs, contacts, settings, and
+                            analytics — with interactive Figma prototypes for usability testing.
+                        </p>
+                    </div>
+                    <div class="process-step pb-8">
+                        <h4 class="font-body text-paper font-semibold mb-1">React Front-End Development</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Developed the application front-end in React with modular, reusable components.
+                            Implemented state management, API integrations, and real-time data updates.
+                        </p>
+                    </div>
+                    <div class="process-step">
+                        <h4 class="font-body text-paper font-semibold mb-1">QA & Iteration</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Conducted thorough cross-browser testing, performance optimization, and
+                            iterative design improvements based on user feedback and analytics data.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key deliverables -->
+            <div class="mb-20 reveal visible">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="w-8 h-px bg-rust"></span>
+                    <h2 class="font-mono text-sm text-rust tracking-widest uppercase">Key Deliverables</h2>
+                </div>
+                <div class="grid gap-4 grid-auto-220">
+                    <div class="detail-card p-6">
+                        <span class="font-display text-rust text-4xl opacity-30">01</span>
+                        <h4 class="font-body text-paper font-semibold mt-2 mb-2">App UI/UX Design</h4>
+                        <p class="text-muted text-xs font-body font-light leading-relaxed">Complete redesign of the web
+                            application interface with modern, user-centric principles.</p>
+                    </div>
+                    <div class="detail-card p-6">
+                        <span class="font-display text-rust text-4xl opacity-30">02</span>
+                        <h4 class="font-body text-paper font-semibold mt-2 mb-2">Design System</h4>
+                        <p class="text-muted text-xs font-body font-light leading-relaxed">Comprehensive component
+                            library and design tokens in Figma for team-wide consistency.</p>
+                    </div>
+                    <div class="detail-card p-6">
+                        <span class="font-display text-rust text-4xl opacity-30">03</span>
+                        <h4 class="font-body text-paper font-semibold mt-2 mb-2">React Front-End</h4>
+                        <p class="text-muted text-xs font-body font-light leading-relaxed">Production-ready React
+                            components with clean architecture, hooks, and API integration.</p>
+                    </div>
+                    <div class="detail-card p-6">
+                        <span class="font-display text-rust text-4xl opacity-30">04</span>
+                        <h4 class="font-body text-paper font-semibold mt-2 mb-2">Interactive Prototypes</h4>
+                        <p class="text-muted text-xs font-body font-light leading-relaxed">Clickable Figma prototypes
+                            for stakeholder demos and usability testing sessions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Landing Pages -->
+            <div class="mb-20 reveal visible">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="w-8 h-px bg-rust"></span>
+                    <h2 class="font-mono text-sm text-rust tracking-widest uppercase">Key Web App Pages</h2>
+                </div>
+                <div class="grid gap-3 grid-auto-280">
+                    <a href="https://www.figma.com/deck/45VHHHTVcJri4Zn4r64xuy/CallHippo-Dashboard-UI-UX-Research---Redesign-Proposal---1?node-id=0-237&t=MXxIJk4hcC7mk7ic-1"
+                        target="_blank" class="detail-card p-5 flex items-center gap-4 group no-underline">
+                        <span
+                            class="font-display text-rust text-2xl opacity-20 group-hover:opacity-50 transition-opacity">↗</span>
+                        <div>
+                            <p class="font-body text-paper text-sm font-medium group-hover:text-rust transition-colors">
+                                Dashboard UX Audit & Recommendations</p>
+                            <p class="font-mono text-xs text-muted truncate">Figma Slides</p>
+                        </div>
+                    </a>
+                    <a href="https://www.figma.com/proto/MAFE28CWozS0tkUwK056qI/CH-Dash?node-id=17-529&starting-point-node-id=17%3A529&hide-ui=1"
+                        target="_blank" class="detail-card p-5 flex items-center gap-4 group no-underline">
+                        <span
+                            class="font-display text-rust text-2xl opacity-20 group-hover:opacity-50 transition-opacity">↗</span>
+                        <div>
+                            <p class="font-body text-paper text-sm font-medium group-hover:text-rust transition-colors">
+                                Dashboard New Design</p>
+                            <p class="font-mono text-xs text-muted truncate">Figma</p>
+                        </div>
+                    </a>
+                    <a href="https://www.figma.com/proto/MAFE28CWozS0tkUwK056qI/CH-Dash?node-id=25-26&starting-point-node-id=17%3A529&hide-ui=1"
+                        target="_blank" class="detail-card p-5 flex items-center gap-4 group no-underline">
+                        <span
+                            class="font-display text-rust text-2xl opacity-20 group-hover:opacity-50 transition-opacity">↗</span>
+                        <div>
+                            <p class="font-body text-paper text-sm font-medium group-hover:text-rust transition-colors">
+                                Call Analytics</p>
+                            <p class="font-mono text-xs text-muted truncate">Figma</p>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="reveal visible">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="w-8 h-px bg-rust"></span>
+                    <h2 class="font-mono text-sm text-rust tracking-widest uppercase">Tools Used</h2>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <span
+                        class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust tool-tag-rust">React</span>
+                    <span
+                        class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust tool-tag-rust">TypeScript</span>
+                    <span
+                        class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust tool-tag-rust">Figma</span>
+                    <span
+                        class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust tool-tag-rust">Tailwind
+                        CSS</span>
+                    <span
+                        class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust tool-tag-rust">REST
+                        APIs</span>
+                    <span
+                        class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust tool-tag-rust">Git</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── NEXT PROJECT ── -->
+    <section class="py-20 px-8 text-center section-border-top">
+        <p class="font-mono text-xs text-muted tracking-widest mb-4 uppercase">Next Project</p>
+        <a href="softwaresuggest.html"
+            class="font-display text-paper hover:text-acid transition-colors text-section-heading-md">
+            SoftwareSuggest →
+        </a>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer class="px-8 py-8 flex items-center justify-between section-border-top">
+        <span class="font-mono text-xs text-muted tracking-widest">© 2025 JIGAR ACHARYA</span>
+        <span class="font-mono text-xs text-muted tracking-widest">FULL STACK DESIGNER · TEAM LEAD</span>
+        <span class="font-mono text-xs text-acid tracking-widest">MADE WITH PRECISION ✦</span>
+    </footer>
+
+    <!-- ── JS ── -->
+    <script>
+        // Tab switching
+        function switchTab(tabId, btn) {
+            // Hide all panels
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            // Deactivate all buttons
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            // Activate selected
+            document.getElementById(tabId).classList.add('active');
+            btn.classList.add('active');
+
+            // Re-trigger reveal for newly visible elements
+            const panel = document.getElementById(tabId);
+            panel.querySelectorAll('.reveal').forEach(el => {
+                el.classList.add('visible');
+            });
+        }
+
+        // Reveal on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.12 });
+        reveals.forEach(el => observer.observe(el));
+
+        // Custom cursor
+        const dot = document.getElementById('cursorDot');
+        const ring = document.getElementById('cursorRing');
+        let rx = -100, ry = -100; // current ring pos
+        let tx = -100, ty = -100; // target ring pos (mouse pos)
+
+        document.addEventListener('mousemove', e => {
+            dot.style.left = e.clientX + 'px';
+            dot.style.top = e.clientY + 'px';
+            tx = e.clientX;
+            ty = e.clientY;
+        });
+
+        function animateRing() {
+            rx += (tx - rx) * 0.15;
+            ry += (ty - ry) * 0.15;
+            ring.style.left = rx + 'px';
+            ring.style.top = ry + 'px';
+            requestAnimationFrame(animateRing);
+        }
+        animateRing();
+
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                ring.style.transform = 'translate(-50%,-50%) scale(1.6)';
+                ring.style.borderColor = '#c6f135';
+            });
+            el.addEventListener('mouseleave', () => {
+                ring.style.transform = 'translate(-50%,-50%) scale(1)';
+                ring.style.borderColor = 'rgba(198,241,53,0.5)';
+            });
+        });
+    </script>
+</body>
+
+</html>

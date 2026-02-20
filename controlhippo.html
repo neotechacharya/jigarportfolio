@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>ControlHippo — Case Study | Jigar Acharya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Sora:wght@300;400;600;700&display=swap"
+        rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Bebas Neue', 'sans-serif'],
+                        mono: ['DM Mono', 'monospace'],
+                        body: ['Sora', 'sans-serif'],
+                    },
+                    colors: {
+                        ink: '#0a0a0f',
+                        paper: '#f4f0e8',
+                        acid: '#c6f135',
+                        rust: '#e84b2f',
+                        muted: '#8a8a99',
+                        line: '#1e1e2a',
+                    },
+                },
+            },
+        }
+    </script>
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="grid-bg">
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot cursor-init" id="cursorDot"></div>
+    <div class="cursor-ring cursor-init" id="cursorRing"></div>
+
+    <!-- ── NAV ── -->
+    <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5" class="nav-bar">
+        <a href="index.html" class="font-mono text-xs tracking-widest text-acid uppercase">JA/</a>
+        <div class="flex gap-8 font-mono text-xs tracking-wider text-muted">
+            <a href="index.html#work" class="nav-link hover:text-paper transition-colors">Work</a>
+            <a href="index.html#skills" class="nav-link hover:text-paper transition-colors">Skills</a>
+            <a href="index.html#about" class="nav-link hover:text-paper transition-colors">About</a>
+            <a href="index.html#contact" class="nav-link hover:text-paper transition-colors">Contact</a>
+        </div>
+        <a href="mailto:jigar@example.com"
+            class="font-mono text-xs tracking-widest px-4 py-2 border border-acid text-acid hover:bg-acid hover:text-ink transition-all duration-300">
+            Hire Me →
+        </a>
+    </nav>
+
+    <!-- ── HERO BANNER ── -->
+    <section class="pt-28 pb-16 px-8 section-container">
+
+        <!-- Back link -->
+        <div class="flex justify-start mb-10 reveal">
+            <a href="index.html#work"
+                class="font-mono text-xs text-muted hover:text-acid tracking-widest transition-colors flex items-center gap-2">
+                ← Back to Projects
+            </a>
+        </div>
+
+        <!-- Two-column layout -->
+        <div class="grid items-center gap-12 reveal grid-2col delay-100">
+
+            <!-- Left: Content -->
+            <div>
+                <!-- Project badge -->
+                <div class="flex items-center gap-2 mb-6">
+                    <span
+                        class="font-mono text-xs tracking-widest text-acid uppercase px-3 py-1 border border-acid border-opacity-30"
+                        class="tool-tag-acid">CASE STUDY</span>
+                    <span class="font-mono text-xs tracking-widest text-muted uppercase">· 03</span>
+                </div>
+
+                <!-- Title -->
+                <h1 class="font-display text-paper mb-4 text-case-hero-sm">
+                    CONTROLHIPPO
+                </h1>
+
+                <!-- Subtitle -->
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="block h-px w-8" class="line-gradient-left"></span>
+                    <span class="font-mono text-xs tracking-[0.2em] text-muted uppercase">SAAS · Website + Web
+                        Application</span>
+                </div>
+
+                <!-- Description -->
+                <p class="text-muted font-body font-light leading-relaxed mb-8 text-body-sm">
+                    End-to-end design and development for an
+                    <em class="text-paper not-italic">omnichannel conversational AI platform</em> —
+                    <em class="text-acid not-italic">WordPress website</em> for marketing and lead generation,
+                    plus a <em class="text-acid not-italic">React web application</em> for managing unified messaging,
+                    AI agents, and customer analytics.
+                </p>
+
+                <!-- Quick info row -->
+                <div class="flex flex-wrap gap-8">
+                    <div>
+                        <p class="font-mono text-xs text-muted tracking-widest uppercase mb-1">Role</p>
+                        <p class="font-body text-paper text-sm font-medium">Full Stack Designer</p>
+                    </div>
+                    <div class="w-px self-stretch divider-v"></div>
+                    <div>
+                        <p class="font-mono text-xs text-muted tracking-widest uppercase mb-1">Industry</p>
+                        <p class="font-body text-paper text-sm font-medium">SaaS / AI</p>
+                    </div>
+                    <div class="w-px self-stretch divider-v"></div>
+                    <div>
+                        <p class="font-mono text-xs text-muted tracking-widest uppercase mb-1">Stack</p>
+                        <p class="font-body text-paper text-sm font-medium">WordPress · React · Figma</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Banner image -->
+            <div>
+                <div class="rounded-sm overflow-hidden card-img-border-acid-light">
+                    <img src="contr_prbanner.jpg" alt="ControlHippo Banner" class="w-full h-auto object-cover" />
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── TABS ── -->
+    <section class="px-8 pb-28 section-container">
+
+        <!-- Tab bar -->
+        <div class="flex justify-center gap-0 mb-16 reveal" class="delay-600 tab-border-bottom">
+            <button
+                class="tab-btn active font-mono text-sm tracking-widest text-acid px-6 py-4 cursor-pointer bg-transparent border-none outline-none"
+                data-tab="tab-website" onclick="switchTab('tab-website', this)">
+                Website Development & UI/UX
+            </button>
+            <button
+                class="tab-btn font-mono text-sm tracking-widest text-muted px-6 py-4 cursor-pointer bg-transparent border-none outline-none"
+                data-tab="tab-webapp" onclick="switchTab('tab-webapp', this)">
+                Web Application & UI/UX
+            </button>
+        </div>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- TAB 1: Website Development & UI/UX         -->
+        <!-- ═══════════════════════════════════════════ -->
+        <div id="tab-website" class="tab-panel active">
+
+            <!-- Overview -->
+            <div class="mb-20 reveal">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="w-8 h-px bg-acid"></span>
+                    <h2 class="font-mono text-sm text-acid tracking-widest uppercase">Overview</h2>
+                </div>
+                <div class="grid gap-8 grid-2col">
+                    <div>
+                        <h3 class="font-display text-paper text-2xl mb-4">THE CHALLENGE</h3>
+                        <p class="text-muted font-body font-light leading-relaxed text-sm">
+                            ControlHippo needed a high-converting marketing website to position their
+                            omnichannel AI platform in a competitive SaaS market. The site had to clearly
+                            communicate complex AI features — unified inbox, conversational agents, automated
+                            workflows — while driving demo bookings and sign-ups.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-paper text-2xl mb-4">THE SOLUTION</h3>
+                        <p class="text-muted font-body font-light leading-relaxed text-sm">
+                            I designed and developed a dynamic WordPress website with conversion-optimized
+                            landing pages, clear feature breakdowns, and strategic CTAs. Built with a modular
+                            approach to support rapid iteration on messaging, pricing pages, and
+                            industry-specific use cases.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Process -->
+            <div class="mb-20 reveal">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="w-8 h-px bg-acid"></span>
+                    <h2 class="font-mono text-sm text-acid tracking-widest uppercase">Design Process</h2>
+                </div>
+                <div class="max-w-2xl space-y-0">
+                    <div class="process-step pb-8">
+                        <h4 class="font-body text-paper font-semibold mb-1">Competitive & UX Research</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Analyzed competing omnichannel platforms to identify positioning gaps
+                            and studied user journeys to optimize the visitor-to-lead conversion funnel.
+                        </p>
+                    </div>
+                    <div class="process-step pb-8">
+                        <h4 class="font-body text-paper font-semibold mb-1">Wireframes & Information Architecture</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Structured the sitemap around key product pillars — AI agents, omnichannel inbox,
+                            automated workflows, and analytics — ensuring each feature had clear, dedicated pages.
+                        </p>
+                    </div>
+                    <div class="process-step pb-8">
+                        <h4 class="font-body text-paper font-semibold mb-1">High-Fidelity UI Design</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Created polished Figma designs with interactive product previews, animated feature
+                            sections, and trust-building elements like testimonials and integration logos.
+                        </p>
+                    </div>
+                    <div class="process-step pb-8">
+                        <h4 class="font-body text-paper font-semibold mb-1">WordPress Development</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Built the front-end in WordPress with custom templates, optimized for SEO,
+                            page speed, and easy content management by the marketing team.
+                        </p>
+                    </div>
+                    <div class="process-step">
+                        <h4 class="font-body text-paper font-semibold mb-1">CRO & Analytics Setup</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Implemented conversion tracking, heatmaps, and A/B test-ready landing pages
+                            to continuously improve demo booking rates.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key deliverables -->
+            <div class="mb-20 reveal">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="w-8 h-px bg-acid"></span>
+                    <h2 class="font-mono text-sm text-acid tracking-widest uppercase">Key Deliverables</h2>
+                </div>
+                <div class="grid gap-4 grid-auto-220">
+                    <div class="detail-card p-6">
+                        <span class="font-display text-acid text-4xl opacity-20">01</span>
+                        <h4 class="font-body text-paper font-semibold mt-2 mb-2">Landing Pages</h4>
+                        <p class="text-muted text-xs font-body font-light leading-relaxed">Conversion-optimized pages
+                            for AI agents, omnichannel inbox, workflows, and pricing.</p>
+                    </div>
+                    <div class="detail-card p-6">
+                        <span class="font-display text-acid text-4xl opacity-20">02</span>
+                        <h4 class="font-body text-paper font-semibold mt-2 mb-2">Feature Pages</h4>
+                        <p class="text-muted text-xs font-body font-light leading-relaxed">Detailed product feature
+                            showcases with interactive demos and comparison tables.</p>
+                    </div>
+                    <div class="detail-card p-6">
+                        <span class="font-display text-acid text-4xl opacity-20">03</span>
+                        <h4 class="font-body text-paper font-semibold mt-2 mb-2">Industry Pages</h4>
+                        <p class="text-muted text-xs font-body font-light leading-relaxed">Use-case pages for
+                            healthcare, finance, education, and e-commerce verticals.</p>
+                    </div>
+                    <div class="detail-card p-6">
+                        <span class="font-display text-acid text-4xl opacity-20">04</span>
+                        <h4 class="font-body text-paper font-semibold mt-2 mb-2">SEO & Performance</h4>
+                        <p class="text-muted text-xs font-body font-light leading-relaxed">Optimized Core Web Vitals,
+                            structured data, and semantic HTML for organic growth.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Landing Pages -->
+            <div class="mb-20 reveal">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="w-8 h-px bg-acid"></span>
+                    <h2 class="font-mono text-sm text-acid tracking-widest uppercase">Key Landing Pages</h2>
+                </div>
+                <div class="grid gap-3 grid-auto-280">
+                    <a href="https://controlhippo.com/" target="_blank"
+                        class="detail-card p-5 flex items-center gap-4 group no-underline">
+                        <span
+                            class="font-display text-acid text-2xl opacity-20 group-hover:opacity-50 transition-opacity">↗</span>
+                        <div>
+                            <p class="font-body text-paper text-sm font-medium group-hover:text-acid transition-colors">
+                                Homepage</p>
+                            <p class="font-mono text-xs text-muted truncate">controlhippo.com</p>
+                        </div>
+                    </a>
+                    <a href="https://controlhippo.com/ai-chat-assistant/" target="_blank"
+                        class="detail-card p-5 flex items-center gap-4 group no-underline">
+                        <span
+                            class="font-display text-acid text-2xl opacity-20 group-hover:opacity-50 transition-opacity">↗</span>
+                        <div>
+                            <p class="font-body text-paper text-sm font-medium group-hover:text-acid transition-colors">
+                                AI Chat Assistant</p>
+                            <p class="font-mono text-xs text-muted truncate">controlhippo.com/ai-chat-assistant</p>
+                        </div>
+                    </a>
+                    <a href="https://controlhippo.com/chatbot-builder/" target="_blank"
+                        class="detail-card p-5 flex items-center gap-4 group no-underline">
+                        <span
+                            class="font-display text-acid text-2xl opacity-20 group-hover:opacity-50 transition-opacity">↗</span>
+                        <div>
+                            <p class="font-body text-paper text-sm font-medium group-hover:text-acid transition-colors">
+                                Chatbot Builder</p>
+                            <p class="font-mono text-xs text-muted truncate">controlhippo.com/chatbot-builder</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="reveal">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="w-8 h-px bg-acid"></span>
+                    <h2 class="font-mono text-sm text-acid tracking-widest uppercase">Tools Used</h2>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <span class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid"
+                        class="tool-tag-acid">WordPress</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid"
+                        class="tool-tag-acid">Figma</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid"
+                        class="tool-tag-acid">PHP</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid"
+                        class="tool-tag-acid">HTML/CSS</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid"
+                        class="tool-tag-acid">JavaScript</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid"
+                        class="tool-tag-acid">Google Analytics</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- TAB 2: Web Application & UI/UX             -->
+        <!-- ═══════════════════════════════════════════ -->
+        <div id="tab-webapp" class="tab-panel">
+
+            <!-- Overview -->
+            <div class="mb-20 reveal visible">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="w-8 h-px bg-rust"></span>
+                    <h2 class="font-mono text-sm text-rust tracking-widest uppercase">Overview</h2>
+                </div>
+                <div class="grid gap-8 grid-2col">
+                    <div>
+                        <h3 class="font-display text-paper text-2xl mb-4">THE CHALLENGE</h3>
+                        <p class="text-muted font-body font-light leading-relaxed text-sm">
+                            The ControlHippo web application needed to unify conversations from WhatsApp,
+                            Instagram, Telegram, Facebook Messenger, and more into a single dashboard.
+                            The UI had to handle real-time messaging, AI agent configuration, workflow
+                            automation, and analytics — all without overwhelming the user.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-paper text-2xl mb-4">THE SOLUTION</h3>
+                        <p class="text-muted font-body font-light leading-relaxed text-sm">
+                            I designed the complete UI/UX in Figma and built the front-end in React,
+                            creating an intuitive dashboard with a unified inbox, drag-and-drop workflow
+                            builder, AI agent management panels, and real-time analytics dashboards
+                            that scale across omnichannel operations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Process -->
+            <div class="mb-20 reveal visible">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="w-8 h-px bg-rust"></span>
+                    <h2 class="font-mono text-sm text-rust tracking-widest uppercase">Design & Dev Process</h2>
+                </div>
+                <div class="max-w-2xl space-y-0">
+                    <div class="process-step pb-8">
+                        <h4 class="font-body text-paper font-semibold mb-1">User Flow Mapping</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Mapped critical workflows — omnichannel inbox navigation, AI agent setup,
+                            automated workflow creation, and analytics review — to minimize friction.
+                        </p>
+                    </div>
+                    <div class="process-step pb-8">
+                        <h4 class="font-body text-paper font-semibold mb-1">Design System & Components</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Built a comprehensive design system in Figma with reusable components for
+                            chat interfaces, channel selectors, workflow nodes, and data visualizations.
+                        </p>
+                    </div>
+                    <div class="process-step pb-8">
+                        <h4 class="font-body text-paper font-semibold mb-1">Dashboard UI Design</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Designed the unified inbox with channel filtering, conversation threading,
+                            AI-suggested replies, and customer context panels for agent efficiency.
+                        </p>
+                    </div>
+                    <div class="process-step pb-8">
+                        <h4 class="font-body text-paper font-semibold mb-1">React Front-End Build</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Developed the application front-end in React with real-time WebSocket
+                            messaging, state management, and responsive layouts for desktop and tablet.
+                        </p>
+                    </div>
+                    <div class="process-step">
+                        <h4 class="font-body text-paper font-semibold mb-1">Iteration & QA</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Conducted usability testing with sales and support teams, iterating on
+                            conversation UIs and workflow builders based on real usage patterns.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key deliverables -->
+            <div class="mb-20 reveal visible">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="w-8 h-px bg-rust"></span>
+                    <h2 class="font-mono text-sm text-rust tracking-widest uppercase">Key Deliverables</h2>
+                </div>
+                <div class="grid gap-4 grid-auto-220">
+                    <div class="detail-card p-6">
+                        <span class="font-display text-rust text-4xl opacity-30">01</span>
+                        <h4 class="font-body text-paper font-semibold mt-2 mb-2">Unified Inbox UI</h4>
+                        <p class="text-muted text-xs font-body font-light leading-relaxed">Omnichannel conversation view
+                            with channel filtering, AI replies, and customer context.</p>
+                    </div>
+                    <div class="detail-card p-6">
+                        <span class="font-display text-rust text-4xl opacity-30">02</span>
+                        <h4 class="font-body text-paper font-semibold mt-2 mb-2">AI Agent Builder</h4>
+                        <p class="text-muted text-xs font-body font-light leading-relaxed">Configuration panels for
+                            sales and support AI agents with training and behavior settings.</p>
+                    </div>
+                    <div class="detail-card p-6">
+                        <span class="font-display text-rust text-4xl opacity-30">03</span>
+                        <h4 class="font-body text-paper font-semibold mt-2 mb-2">Workflow Builder</h4>
+                        <p class="text-muted text-xs font-body font-light leading-relaxed">Visual drag-and-drop workflow
+                            automation for lead routing, follow-ups, and notifications.</p>
+                    </div>
+                    <div class="detail-card p-6">
+                        <span class="font-display text-rust text-4xl opacity-30">04</span>
+                        <h4 class="font-body text-paper font-semibold mt-2 mb-2">Analytics Dashboard</h4>
+                        <p class="text-muted text-xs font-body font-light leading-relaxed">Real-time dashboards with
+                            CSAT scores, response times, lead metrics, and AI performance.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Landing Pages -->
+            <div class="mb-20 reveal visible">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="w-8 h-px bg-rust"></span>
+                    <h2 class="font-mono text-sm text-rust tracking-widest uppercase">Key Landing Pages</h2>
+                </div>
+                <div class="grid gap-3 grid-auto-280">
+                    <a href="https://controlhippo.com/" target="_blank"
+                        class="detail-card p-5 flex items-center gap-4 group no-underline">
+                        <span
+                            class="font-display text-rust text-2xl opacity-20 group-hover:opacity-50 transition-opacity">↗</span>
+                        <div>
+                            <p class="font-body text-paper text-sm font-medium group-hover:text-rust transition-colors">
+                                Homepage</p>
+                            <p class="font-mono text-xs text-muted truncate">controlhippo.com</p>
+                        </div>
+                    </a>
+                    <a href="https://controlhippo.com/ai-chat-assistant/" target="_blank"
+                        class="detail-card p-5 flex items-center gap-4 group no-underline">
+                        <span
+                            class="font-display text-rust text-2xl opacity-20 group-hover:opacity-50 transition-opacity">↗</span>
+                        <div>
+                            <p class="font-body text-paper text-sm font-medium group-hover:text-rust transition-colors">
+                                AI Chat Assistant</p>
+                            <p class="font-mono text-xs text-muted truncate">controlhippo.com/ai-chat-assistant</p>
+                        </div>
+                    </a>
+                    <a href="https://controlhippo.com/chatbot-builder/" target="_blank"
+                        class="detail-card p-5 flex items-center gap-4 group no-underline">
+                        <span
+                            class="font-display text-rust text-2xl opacity-20 group-hover:opacity-50 transition-opacity">↗</span>
+                        <div>
+                            <p class="font-body text-paper text-sm font-medium group-hover:text-rust transition-colors">
+                                Chatbot Builder</p>
+                            <p class="font-mono text-xs text-muted truncate">controlhippo.com/chatbot-builder</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="reveal visible">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="w-8 h-px bg-rust"></span>
+                    <h2 class="font-mono text-sm text-rust tracking-widest uppercase">Tools Used</h2>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <span class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust"
+                        class="tool-tag-rust">React</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust"
+                        class="tool-tag-rust">Figma</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust"
+                        class="tool-tag-rust">JavaScript</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust"
+                        class="tool-tag-rust">REST APIs</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust"
+                        class="tool-tag-rust">WebSockets</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust"
+                        class="tool-tag-rust">Git</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── NEXT PROJECT ── -->
+    <section class="py-20 px-8 text-center section-border-top">
+        <p class="font-mono text-xs text-muted tracking-widest mb-4 uppercase">Next Project</p>
+        <a href="callhippo.html" class="font-display text-paper hover:text-acid transition-colors"
+            class="text-section-heading-md">
+            CallHippo →
+        </a>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer class="px-8 py-8 flex items-center justify-between section-border-top">
+        <span class="font-mono text-xs text-muted tracking-widest">© 2025 JIGAR ACHARYA</span>
+        <span class="font-mono text-xs text-muted tracking-widest">FULL STACK DESIGNER · TEAM LEAD</span>
+        <span class="font-mono text-xs text-acid tracking-widest">MADE WITH PRECISION ✦</span>
+    </footer>
+
+    <!-- ── JS ── -->
+    <script>
+        // Tab switching
+        function switchTab(tabId, btn) {
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            btn.classList.add('active');
+            const panel = document.getElementById(tabId);
+            panel.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+        }
+
+        // Reveal on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) e.target.classList.add('visible');
+            });
+        }, { threshold: 0.12 });
+        reveals.forEach(el => observer.observe(el));
+
+        // Custom cursor
+        const dot = document.getElementById('cursorDot');
+        const ring = document.getElementById('cursorRing');
+        let rx = -100, ry = -100; // current ring pos
+        let tx = -100, ty = -100; // target ring pos (mouse pos)
+
+        document.addEventListener('mousemove', e => {
+            dot.style.left = e.clientX + 'px';
+            dot.style.top = e.clientY + 'px';
+            tx = e.clientX;
+            ty = e.clientY;
+        });
+
+        function animateRing() {
+            rx += (tx - rx) * 0.15;
+            ry += (ty - ry) * 0.15;
+            ring.style.left = rx + 'px';
+            ring.style.top = ry + 'px';
+            requestAnimationFrame(animateRing);
+        }
+        animateRing();
+
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                ring.style.transform = 'translate(-50%,-50%) scale(1.6)';
+                ring.style.borderColor = '#c6f135';
+            });
+            el.addEventListener('mouseleave', () => {
+                ring.style.transform = 'translate(-50%,-50%) scale(1)';
+                ring.style.borderColor = 'rgba(198,241,53,0.5)';
+            });
+        });
+    </script>
+</body>
+
+</html>

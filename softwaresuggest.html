@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>SoftwareSuggest — Case Study | Jigar Acharya</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=Sora:wght@300;400;600;700&display=swap"
+        rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        display: ['Bebas Neue', 'sans-serif'],
+                        mono: ['DM Mono', 'monospace'],
+                        body: ['Sora', 'sans-serif'],
+                    },
+                    colors: {
+                        ink: '#0a0a0f',
+                        paper: '#f4f0e8',
+                        acid: '#c6f135',
+                        rust: '#e84b2f',
+                        muted: '#8a8a99',
+                        line: '#1e1e2a',
+                    },
+                },
+            },
+        }
+    </script>
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="grid-bg">
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot cursor-init" id="cursorDot"></div>
+    <div class="cursor-ring cursor-init" id="cursorRing"></div>
+
+    <!-- ── NAV ── -->
+    <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5" class="nav-bar">
+        <a href="index.html" class="font-mono text-xs tracking-widest text-acid uppercase">JA/</a>
+        <div class="flex gap-8 font-mono text-xs tracking-wider text-muted">
+            <a href="index.html#work" class="nav-link hover:text-paper transition-colors">Work</a>
+            <a href="index.html#skills" class="nav-link hover:text-paper transition-colors">Skills</a>
+            <a href="index.html#about" class="nav-link hover:text-paper transition-colors">About</a>
+            <a href="index.html#contact" class="nav-link hover:text-paper transition-colors">Contact</a>
+        </div>
+        <a href="mailto:jigar@example.com"
+            class="font-mono text-xs tracking-widest px-4 py-2 border border-acid text-acid hover:bg-acid hover:text-ink transition-all duration-300">
+            Hire Me →
+        </a>
+    </nav>
+
+    <!-- ── HERO BANNER ── -->
+    <section class="pt-28 pb-16 px-8 section-container">
+
+        <!-- Back link -->
+        <div class="flex justify-start mb-10 reveal">
+            <a href="index.html#work"
+                class="font-mono text-xs text-muted hover:text-acid tracking-widest transition-colors flex items-center gap-2">
+                ← Back to Projects
+            </a>
+        </div>
+
+        <!-- Two-column layout -->
+        <div class="grid items-center gap-12 reveal grid-2col delay-100">
+
+            <!-- Left: Content -->
+            <div>
+                <!-- Project badge -->
+                <div class="flex items-center gap-2 mb-6">
+                    <span
+                        class="font-mono text-xs tracking-widest text-rust uppercase px-3 py-1 border border-rust border-opacity-30"
+                        class="badge-rust">CASE STUDY</span>
+                    <span class="font-mono text-xs tracking-widest text-muted uppercase">· 02</span>
+                </div>
+
+                <!-- Title -->
+                <h1 class="font-display text-paper mb-4 text-case-hero-sm">
+                    SOFTWARE<br>SUGGEST
+                </h1>
+
+                <!-- Subtitle -->
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="block h-px w-8" class="line-gradient-left-rust"></span>
+                    <span class="font-mono text-xs tracking-[0.2em] text-muted uppercase">B2B Marketplace ·
+                        Website</span>
+                </div>
+
+                <!-- Description -->
+                <p class="text-muted font-body font-light leading-relaxed mb-8 text-body-sm">
+                    UI/UX design and front-end development for a leading
+                    <em class="text-paper not-italic">B2B software discovery platform</em> —
+                    designing and building <em class="text-rust not-italic">category listing pages</em> and
+                    <em class="text-rust not-italic">product profile pages</em> that help businesses find and compare
+                    software solutions.
+                </p>
+
+                <!-- Quick info row -->
+                <div class="flex flex-wrap gap-8">
+                    <div>
+                        <p class="font-mono text-xs text-muted tracking-widest uppercase mb-1">Role</p>
+                        <p class="font-body text-paper text-sm font-medium">UI/UX & Front-End Dev</p>
+                    </div>
+                    <div class="w-px self-stretch divider-v"></div>
+                    <div>
+                        <p class="font-mono text-xs text-muted tracking-widest uppercase mb-1">Industry</p>
+                        <p class="font-body text-paper text-sm font-medium">B2B / SaaS</p>
+                    </div>
+                    <div class="w-px self-stretch divider-v"></div>
+                    <div>
+                        <p class="font-mono text-xs text-muted tracking-widest uppercase mb-1">Stack</p>
+                        <p class="font-body text-paper text-sm font-medium">Yii PHP · Bootstrap · Figma</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Banner image -->
+            <div>
+                <div class="rounded-sm overflow-hidden card-img-border-rust-light">
+                    <img src="ss_prjbanner.jpg" alt="SoftwareSuggest Banner" class="w-full h-auto object-cover" />
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── TABS ── -->
+    <section class="px-8 pb-28 section-container">
+
+        <!-- Tab bar -->
+        <div class="flex justify-center gap-0 mb-16 reveal" class="delay-600 tab-border-bottom">
+            <button
+                class="tab-btn active font-mono text-sm tracking-widest text-acid px-6 py-4 cursor-pointer bg-transparent border-none outline-none"
+                data-tab="tab-category" onclick="switchTab('tab-category', this)">
+                Category Listing Pages
+            </button>
+            <button
+                class="tab-btn font-mono text-sm tracking-widest text-muted px-6 py-4 cursor-pointer bg-transparent border-none outline-none"
+                data-tab="tab-product" onclick="switchTab('tab-product', this)">
+                Product Profile Pages
+            </button>
+        </div>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- TAB 1: Category Listing Pages              -->
+        <!-- ═══════════════════════════════════════════ -->
+        <div id="tab-category" class="tab-panel active">
+
+            <!-- Overview -->
+            <div class="mb-20 reveal">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="w-8 h-px bg-acid"></span>
+                    <h2 class="font-mono text-sm text-acid tracking-widest uppercase">Overview</h2>
+                </div>
+                <div class="grid gap-8 grid-2col">
+                    <div>
+                        <h3 class="font-display text-paper text-2xl mb-4">THE CHALLENGE</h3>
+                        <p class="text-muted font-body font-light leading-relaxed text-sm">
+                            SoftwareSuggest's category pages needed to surface hundreds of software products
+                            in an intuitive, scannable format. Users struggled to compare solutions quickly,
+                            leading to high bounce rates and low engagement with the listing content.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-paper text-2xl mb-4">THE SOLUTION</h3>
+                        <p class="text-muted font-body font-light leading-relaxed text-sm">
+                            I redesigned the category listing pages with a structured layout featuring
+                            clear filtering, comparison-friendly cards, and prominent review data. Built the
+                            front-end with Bootstrap on Yii PHP, ensuring fast load times across
+                            hundreds of dynamically generated category pages.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Process -->
+            <div class="mb-20 reveal">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="w-8 h-px bg-acid"></span>
+                    <h2 class="font-mono text-sm text-acid tracking-widest uppercase">Design Process</h2>
+                </div>
+                <div class="max-w-2xl space-y-0">
+                    <div class="process-step pb-8">
+                        <h4 class="font-body text-paper font-semibold mb-1">User Behavior Analysis</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Studied how users browse and filter software categories, identifying key
+                            decision-making patterns — pricing, ratings, feature sets, and peer reviews.
+                        </p>
+                    </div>
+                    <div class="process-step pb-8">
+                        <h4 class="font-body text-paper font-semibold mb-1">Information Architecture</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Structured category page layouts with smart filtering (by features, pricing,
+                            deployment), sortable lists, and quick-compare functionality to reduce decision fatigue.
+                        </p>
+                    </div>
+                    <div class="process-step pb-8">
+                        <h4 class="font-body text-paper font-semibold mb-1">UI Design in Figma</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Created high-fidelity designs for listing cards with rating badges, pricing tiers,
+                            and feature highlights — ensuring visual consistency across 500+ category pages.
+                        </p>
+                    </div>
+                    <div class="process-step pb-8">
+                        <h4 class="font-body text-paper font-semibold mb-1">Front-End Development</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Built responsive listing pages using Bootstrap on Yii PHP framework with
+                            dynamic filtering, lazy loading, and SEO-optimized markup for organic traffic.
+                        </p>
+                    </div>
+                    <div class="process-step">
+                        <h4 class="font-body text-paper font-semibold mb-1">Performance & SEO Optimization</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Optimized page speed for data-heavy listings, implemented structured data
+                            for search engines, and ensured mobile-first responsive behavior.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key deliverables -->
+            <div class="mb-20 reveal">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="w-8 h-px bg-acid"></span>
+                    <h2 class="font-mono text-sm text-acid tracking-widest uppercase">Key Deliverables</h2>
+                </div>
+                <div class="grid gap-4 grid-auto-220">
+                    <div class="detail-card p-6">
+                        <span class="font-display text-acid text-4xl opacity-20">01</span>
+                        <h4 class="font-body text-paper font-semibold mt-2 mb-2">Listing Page UI</h4>
+                        <p class="text-muted text-xs font-body font-light leading-relaxed">Redesigned category listing
+                            layouts with comparison-friendly product cards and filter systems.</p>
+                    </div>
+                    <div class="detail-card p-6">
+                        <span class="font-display text-acid text-4xl opacity-20">02</span>
+                        <h4 class="font-body text-paper font-semibold mt-2 mb-2">Smart Filters</h4>
+                        <p class="text-muted text-xs font-body font-light leading-relaxed">Multi-criteria filtering by
+                            pricing, features, deployment type, and user ratings.</p>
+                    </div>
+                    <div class="detail-card p-6">
+                        <span class="font-display text-acid text-4xl opacity-20">03</span>
+                        <h4 class="font-body text-paper font-semibold mt-2 mb-2">Responsive Build</h4>
+                        <p class="text-muted text-xs font-body font-light leading-relaxed">Bootstrap-based responsive
+                            front-end integrated with Yii PHP backend templates.</p>
+                    </div>
+                    <div class="detail-card p-6">
+                        <span class="font-display text-acid text-4xl opacity-20">04</span>
+                        <h4 class="font-body text-paper font-semibold mt-2 mb-2">SEO Markup</h4>
+                        <p class="text-muted text-xs font-body font-light leading-relaxed">Structured data and semantic
+                            HTML for improved search engine visibility across categories.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Performance -->
+            <div class="mb-20 reveal">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="w-8 h-px bg-acid"></span>
+                    <h2 class="font-mono text-sm text-acid tracking-widest uppercase">Page Performance</h2>
+                </div>
+                <p class="text-muted font-body font-light leading-relaxed text-sm mb-10 max-w-prose">
+                    With hundreds of data-heavy listing pages, performance optimization was critical. Every page was
+                    tuned for
+                    <em class="text-paper not-italic">Core Web Vitals</em> — optimizing Largest Contentful Paint (LCP),
+                    minimizing Cumulative Layout Shift (CLS), and ensuring responsive First Input Delay (FID)
+                    for a fast, seamless browsing experience across all devices.
+                </p>
+                <div class="grid gap-6 grid-auto-240">
+                    <!-- Mobile Score -->
+                    <div class="detail-card p-8 text-center">
+                        <p class="font-mono text-xs text-muted tracking-widest uppercase mb-4">Mobile PageSpeed</p>
+                        <div class="score-circle-wrap">
+                            <svg viewBox="0 0 120 120" class="score-circle-svg">
+                                <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(198,241,53,0.1)"
+                                    stroke-width="8" />
+                                <circle cx="60" cy="60" r="52" fill="none" stroke="#c6f135" stroke-width="8"
+                                    stroke-dasharray="326.7" stroke-dashoffset="26.1" stroke-linecap="round" />
+                            </svg>
+                            <span class="font-display text-acid absolute inset-0 flex items-center justify-center"
+                                class="text-stat">92</span>
+                        </div>
+                        <p class="font-mono text-xs text-muted tracking-wider">Google Lighthouse</p>
+                    </div>
+                    <!-- Desktop Score -->
+                    <div class="detail-card p-8 text-center">
+                        <p class="font-mono text-xs text-muted tracking-widest uppercase mb-4">Desktop PageSpeed</p>
+                        <div class="score-circle-wrap">
+                            <svg viewBox="0 0 120 120" class="score-circle-svg">
+                                <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(198,241,53,0.1)"
+                                    stroke-width="8" />
+                                <circle cx="60" cy="60" r="52" fill="none" stroke="#c6f135" stroke-width="8"
+                                    stroke-dasharray="326.7" stroke-dashoffset="3.3" stroke-linecap="round" />
+                            </svg>
+                            <span class="font-display text-acid absolute inset-0 flex items-center justify-center"
+                                class="text-stat">99</span>
+                        </div>
+                        <p class="font-mono text-xs text-muted tracking-wider">Google Lighthouse</p>
+                    </div>
+                    <!-- Core Web Vitals -->
+                    <div class="detail-card p-8">
+                        <p class="font-mono text-xs text-muted tracking-widest uppercase mb-6">Core Web Vitals</p>
+                        <div class="space-y-4">
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-mono text-xs text-paper">LCP</span>
+                                    <span class="font-mono text-xs text-acid">Passed</span>
+                                </div>
+                                <div class="w-full h-1 rounded perf-bar-track">
+                                    <div class="h-1 rounded bg-acid" style="width:96%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-mono text-xs text-paper">FID</span>
+                                    <span class="font-mono text-xs text-acid">Passed</span>
+                                </div>
+                                <div class="w-full h-1 rounded perf-bar-track">
+                                    <div class="h-1 rounded bg-acid" style="width:99%;"></div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span class="font-mono text-xs text-paper">CLS</span>
+                                    <span class="font-mono text-xs text-acid">Passed</span>
+                                </div>
+                                <div class="w-full h-1 rounded perf-bar-track">
+                                    <div class="h-1 rounded bg-acid" style="width:99%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Pages -->
+            <div class="mb-20 reveal">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="w-8 h-px bg-acid"></span>
+                    <h2 class="font-mono text-sm text-acid tracking-widest uppercase">Key Pages</h2>
+                </div>
+                <div class="grid gap-3 grid-auto-280">
+                    <a href="https://www.softwaresuggest.com/" target="_blank"
+                        class="detail-card p-5 flex items-center gap-4 group no-underline">
+                        <span
+                            class="font-display text-acid text-2xl opacity-20 group-hover:opacity-50 transition-opacity">↗</span>
+                        <div>
+                            <p class="font-body text-paper text-sm font-medium group-hover:text-acid transition-colors">
+                                Homepage</p>
+                            <p class="font-mono text-xs text-muted truncate">softwaresuggest.com</p>
+                        </div>
+                    </a>
+                    <a href="https://www.softwaresuggest.com/accounting-software" target="_blank"
+                        class="detail-card p-5 flex items-center gap-4 group no-underline">
+                        <span
+                            class="font-display text-acid text-2xl opacity-20 group-hover:opacity-50 transition-opacity">↗</span>
+                        <div>
+                            <p class="font-body text-paper text-sm font-medium group-hover:text-acid transition-colors">
+                                Accounting Software</p>
+                            <p class="font-mono text-xs text-muted truncate">softwaresuggest.com/accounting-software</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+
+            <!-- Tools -->
+            <div class="reveal">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="w-8 h-px bg-acid"></span>
+                    <h2 class="font-mono text-sm text-acid tracking-widest uppercase">Tools Used</h2>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <span class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid"
+                        class="tool-tag-acid">Figma</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid"
+                        class="tool-tag-acid">Bootstrap</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid"
+                        class="tool-tag-acid">Yii PHP</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid"
+                        class="tool-tag-acid">HTML/CSS</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid"
+                        class="tool-tag-acid">jQuery</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid"
+                        class="tool-tag-acid">Google Analytics</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════ -->
+        <!-- TAB 2: Product Profile Pages               -->
+        <!-- ═══════════════════════════════════════════ -->
+        <div id="tab-product" class="tab-panel">
+
+            <!-- Overview -->
+            <div class="mb-20 reveal visible">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="w-8 h-px bg-rust"></span>
+                    <h2 class="font-mono text-sm text-rust tracking-widest uppercase">Overview</h2>
+                </div>
+                <div class="grid gap-8 grid-2col">
+                    <div>
+                        <h3 class="font-display text-paper text-2xl mb-4">THE CHALLENGE</h3>
+                        <p class="text-muted font-body font-light leading-relaxed text-sm">
+                            Product profile pages are where users make their final buying decisions. The existing
+                            pages were information-dense but poorly structured, making it hard for users to evaluate
+                            software features, read reviews, and compare pricing at a glance.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="font-display text-paper text-2xl mb-4">THE SOLUTION</h3>
+                        <p class="text-muted font-body font-light leading-relaxed text-sm">
+                            I redesigned the product profile pages with a clear visual hierarchy — hero section
+                            with key metrics, tabbed content for features/pricing/reviews, and prominent CTAs.
+                            Built the responsive front-end using Bootstrap, ensuring consistency across
+                            thousands of dynamically generated product pages.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Process -->
+            <div class="mb-20 reveal visible">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="w-8 h-px bg-rust"></span>
+                    <h2 class="font-mono text-sm text-rust tracking-widest uppercase">Design & Dev Process</h2>
+                </div>
+                <div class="max-w-2xl space-y-0">
+                    <div class="process-step pb-8">
+                        <h4 class="font-body text-paper font-semibold mb-1">Content Audit & User Research</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Mapped all data points displayed on product pages — features, pricing plans,
+                            screenshots, reviews, alternatives — and prioritized them by user importance.
+                        </p>
+                    </div>
+                    <div class="process-step pb-8">
+                        <h4 class="font-body text-paper font-semibold mb-1">Visual Hierarchy Design</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Designed a scannable layout with a product hero section, rating summary,
+                            and tabbed navigation for features, pricing, reviews, and alternatives.
+                        </p>
+                    </div>
+                    <div class="process-step pb-8">
+                        <h4 class="font-body text-paper font-semibold mb-1">UI Component Design</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Created reusable components in Figma — review cards, pricing comparison tables,
+                            feature checklists, screenshot galleries, and CTA modules.
+                        </p>
+                    </div>
+                    <div class="process-step pb-8">
+                        <h4 class="font-body text-paper font-semibold mb-1">Bootstrap Front-End Build</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Developed the responsive front-end using Bootstrap grid and components,
+                            integrated with Yii PHP templates for dynamic content rendering.
+                        </p>
+                    </div>
+                    <div class="process-step">
+                        <h4 class="font-body text-paper font-semibold mb-1">Cross-Browser Testing</h4>
+                        <p class="font-body text-muted text-sm font-light leading-relaxed">
+                            Ensured pixel-perfect rendering across browsers and devices, with
+                            performance optimization for pages with heavy review and media content.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key deliverables -->
+            <div class="mb-20 reveal visible">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="w-8 h-px bg-rust"></span>
+                    <h2 class="font-mono text-sm text-rust tracking-widest uppercase">Key Deliverables</h2>
+                </div>
+                <div class="grid gap-4 grid-auto-220">
+                    <div class="detail-card p-6">
+                        <span class="font-display text-rust text-4xl opacity-30">01</span>
+                        <h4 class="font-body text-paper font-semibold mt-2 mb-2">Profile Page UI</h4>
+                        <p class="text-muted text-xs font-body font-light leading-relaxed">Complete product profile page
+                            redesign with structured content sections and clear CTAs.</p>
+                    </div>
+                    <div class="detail-card p-6">
+                        <span class="font-display text-rust text-4xl opacity-30">02</span>
+                        <h4 class="font-body text-paper font-semibold mt-2 mb-2">Review System UI</h4>
+                        <p class="text-muted text-xs font-body font-light leading-relaxed">Redesigned review display
+                            with rating breakdowns, verified badges, and helpful vote system.</p>
+                    </div>
+                    <div class="detail-card p-6">
+                        <span class="font-display text-rust text-4xl opacity-30">03</span>
+                        <h4 class="font-body text-paper font-semibold mt-2 mb-2">Pricing Tables</h4>
+                        <p class="text-muted text-xs font-body font-light leading-relaxed">Comparison-ready pricing
+                            tables with feature breakdowns and plan highlights.</p>
+                    </div>
+                    <div class="detail-card p-6">
+                        <span class="font-display text-rust text-4xl opacity-30">04</span>
+                        <h4 class="font-body text-paper font-semibold mt-2 mb-2">Responsive Build</h4>
+                        <p class="text-muted text-xs font-body font-light leading-relaxed">Mobile-first Bootstrap
+                            implementation across thousands of dynamically rendered product pages.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Key Pages -->
+            <div class="mb-20 reveal visible">
+                <div class="flex items-center gap-3 mb-8">
+                    <span class="w-8 h-px bg-rust"></span>
+                    <h2 class="font-mono text-sm text-rust tracking-widest uppercase">Key Pages</h2>
+                </div>
+                <div class="grid gap-3 grid-auto-280">
+                    <a href="https://www.softwaresuggest.com/zoho-books" target="_blank"
+                        class="detail-card p-5 flex items-center gap-4 group no-underline">
+                        <span
+                            class="font-display text-rust text-2xl opacity-20 group-hover:opacity-50 transition-opacity">↗</span>
+                        <div>
+                            <p class="font-body text-paper text-sm font-medium group-hover:text-rust transition-colors">
+                                Zoho Books</p>
+                            <p class="font-mono text-xs text-muted truncate">softwaresuggest.com/zoho-books</p>
+                        </div>
+                    </a>
+                    <a href="https://www.softwaresuggest.com/freshbooks" target="_blank"
+                        class="detail-card p-5 flex items-center gap-4 group no-underline">
+                        <span
+                            class="font-display text-rust text-2xl opacity-20 group-hover:opacity-50 transition-opacity">↗</span>
+                        <div>
+                            <p class="font-body text-paper text-sm font-medium group-hover:text-rust transition-colors">
+                                FreshBooks</p>
+                            <p class="font-mono text-xs text-muted truncate">softwaresuggest.com/freshbooks</p>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Tools -->
+            <div class="reveal visible">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="w-8 h-px bg-rust"></span>
+                    <h2 class="font-mono text-sm text-rust tracking-widest uppercase">Tools Used</h2>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <span class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust"
+                        class="badge-rust">Figma</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust"
+                        class="badge-rust">Bootstrap</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust"
+                        class="badge-rust">Yii PHP</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust"
+                        class="badge-rust">HTML/CSS</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust"
+                        class="badge-rust">jQuery</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust"
+                        class="badge-rust">SEO</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ── NEXT PROJECT ── -->
+    <section class="py-20 px-8 text-center section-border-top">
+        <p class="font-mono text-xs text-muted tracking-widest mb-4 uppercase">Next Project</p>
+        <a href="controlhippo.html" class="font-display text-paper hover:text-acid transition-colors"
+            class="text-section-heading-md">
+            ControlHippo →
+        </a>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer class="px-8 py-8 flex items-center justify-between section-border-top">
+        <span class="font-mono text-xs text-muted tracking-widest">© 2025 JIGAR ACHARYA</span>
+        <span class="font-mono text-xs text-muted tracking-widest">FULL STACK DESIGNER · TEAM LEAD</span>
+        <span class="font-mono text-xs text-acid tracking-widest">MADE WITH PRECISION ✦</span>
+    </footer>
+
+    <!-- ── JS ── -->
+    <script>
+        // Tab switching
+        function switchTab(tabId, btn) {
+            document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            btn.classList.add('active');
+            const panel = document.getElementById(tabId);
+            panel.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+        }
+
+        // Reveal on scroll
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) e.target.classList.add('visible');
+            });
+        }, { threshold: 0.12 });
+        reveals.forEach(el => observer.observe(el));
+
+        // Custom cursor
+        const dot = document.getElementById('cursorDot');
+        const ring = document.getElementById('cursorRing');
+        let rx = -100, ry = -100; // current ring pos
+        let tx = -100, ty = -100; // target ring pos (mouse pos)
+
+        document.addEventListener('mousemove', e => {
+            dot.style.left = e.clientX + 'px';
+            dot.style.top = e.clientY + 'px';
+            tx = e.clientX;
+            ty = e.clientY;
+        });
+
+        function animateRing() {
+            rx += (tx - rx) * 0.15;
+            ry += (ty - ry) * 0.15;
+            ring.style.left = rx + 'px';
+            ring.style.top = ry + 'px';
+            requestAnimationFrame(animateRing);
+        }
+        animateRing();
+
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                ring.style.transform = 'translate(-50%,-50%) scale(1.6)';
+                ring.style.borderColor = '#c6f135';
+            });
+            el.addEventListener('mouseleave', () => {
+                ring.style.transform = 'translate(-50%,-50%) scale(1)';
+                ring.style.borderColor = 'rgba(198,241,53,0.5)';
+            });
+        });
+    </script>
+</body>
+
+</html>
