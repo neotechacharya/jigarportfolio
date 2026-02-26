@@ -43,19 +43,34 @@
     <div class="cursor-ring cursor-init" id="cursorRing"></div>
 
     <!-- ── NAV ── -->
-    <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5" class="nav-bar">
+    <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-8 py-5 nav-bar">
         <a href="index.html" class="font-mono text-xs tracking-widest text-acid uppercase">JA/</a>
-        <div class="flex gap-8 font-mono text-xs tracking-wider text-muted">
+        <div class="hidden md:flex gap-8 font-mono text-xs tracking-wider text-muted">
             <a href="index.html#work" class="nav-link hover:text-paper transition-colors">Work</a>
             <a href="index.html#skills" class="nav-link hover:text-paper transition-colors">Skills</a>
             <a href="index.html#about" class="nav-link hover:text-paper transition-colors">About</a>
             <a href="index.html#contact" class="nav-link hover:text-paper transition-colors">Contact</a>
         </div>
         <a href="mailto:jigar@example.com"
-            class="font-mono text-xs tracking-widest px-4 py-2 border border-acid text-acid hover:bg-acid hover:text-ink transition-all duration-300">
+            class="hidden md:block font-mono text-xs tracking-widest px-4 py-2 border border-acid text-acid hover:bg-acid hover:text-ink transition-all duration-300">
             Hire Me →
         </a>
+        <button class="hamburger-btn flex md:hidden" id="menuBtn" onclick="toggleMenu()" aria-label="Open menu">
+            <span style="width:24px"></span>
+            <span style="width:24px"></span>
+            <span style="width:16px"></span>
+        </button>
     </nav>
+
+    <!-- ── MOBILE MENU ── -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="toggleMenu()" aria-label="Close menu">✕</button>
+        <a href="index.html#work" onclick="toggleMenu()" class="font-mono text-2xl tracking-widest text-muted hover:text-paper transition-colors">Work</a>
+        <a href="index.html#skills" onclick="toggleMenu()" class="font-mono text-2xl tracking-widest text-muted hover:text-paper transition-colors">Skills</a>
+        <a href="index.html#about" onclick="toggleMenu()" class="font-mono text-2xl tracking-widest text-muted hover:text-paper transition-colors">About</a>
+        <a href="index.html#contact" onclick="toggleMenu()" class="font-mono text-2xl tracking-widest text-muted hover:text-paper transition-colors">Contact</a>
+        <a href="mailto:jigar@example.com" class="font-mono text-sm tracking-widest px-6 py-3 border border-acid text-acid hover:bg-acid hover:text-ink transition-all duration-300">Hire Me →</a>
+    </div>
 
     <!-- ── HERO BANNER ── -->
     <section class="pt-28 pb-16 px-8 section-container">
@@ -76,8 +91,7 @@
                 <!-- Project badge -->
                 <div class="flex items-center gap-2 mb-6">
                     <span
-                        class="font-mono text-xs tracking-widest text-rust uppercase px-3 py-1 border border-rust border-opacity-30"
-                        class="badge-rust">CASE STUDY</span>
+                        class="font-mono text-xs tracking-widest text-rust uppercase px-3 py-1 border border-rust border-opacity-30 badge-rust">CASE STUDY</span>
                     <span class="font-mono text-xs tracking-widest text-muted uppercase">· 02</span>
                 </div>
 
@@ -88,7 +102,7 @@
 
                 <!-- Subtitle -->
                 <div class="flex items-center gap-3 mb-6">
-                    <span class="block h-px w-8" class="line-gradient-left-rust"></span>
+                    <span class="block h-px w-8 line-gradient-left-rust"></span>
                     <span class="font-mono text-xs tracking-[0.2em] text-muted uppercase">B2B Marketplace ·
                         Website</span>
                 </div>
@@ -135,14 +149,14 @@
     <section class="px-8 pb-28 section-container">
 
         <!-- Tab bar -->
-        <div class="flex justify-center gap-0 mb-16 reveal" class="delay-600 tab-border-bottom">
+        <div class="flex flex-col sm:flex-row justify-center gap-0 mb-16 reveal delay-600 tab-border-bottom">
             <button
-                class="tab-btn active font-mono text-sm tracking-widest text-acid px-6 py-4 cursor-pointer bg-transparent border-none outline-none"
+                class="tab-btn active font-mono text-xs sm:text-sm tracking-widest text-acid px-4 sm:px-6 py-3 sm:py-4 cursor-pointer bg-transparent border-none outline-none"
                 data-tab="tab-category" onclick="switchTab('tab-category', this)">
                 Category Listing Pages
             </button>
             <button
-                class="tab-btn font-mono text-sm tracking-widest text-muted px-6 py-4 cursor-pointer bg-transparent border-none outline-none"
+                class="tab-btn font-mono text-xs sm:text-sm tracking-widest text-muted px-4 sm:px-6 py-3 sm:py-4 cursor-pointer bg-transparent border-none outline-none"
                 data-tab="tab-product" onclick="switchTab('tab-product', this)">
                 Product Profile Pages
             </button>
@@ -283,8 +297,7 @@
                                 <circle cx="60" cy="60" r="52" fill="none" stroke="#c6f135" stroke-width="8"
                                     stroke-dasharray="326.7" stroke-dashoffset="26.1" stroke-linecap="round" />
                             </svg>
-                            <span class="font-display text-acid absolute inset-0 flex items-center justify-center"
-                                class="text-stat">92</span>
+                            <span class="font-display text-acid absolute inset-0 flex items-center justify-center text-stat">92</span>
                         </div>
                         <p class="font-mono text-xs text-muted tracking-wider">Google Lighthouse</p>
                     </div>
@@ -298,8 +311,7 @@
                                 <circle cx="60" cy="60" r="52" fill="none" stroke="#c6f135" stroke-width="8"
                                     stroke-dasharray="326.7" stroke-dashoffset="3.3" stroke-linecap="round" />
                             </svg>
-                            <span class="font-display text-acid absolute inset-0 flex items-center justify-center"
-                                class="text-stat">99</span>
+                            <span class="font-display text-acid absolute inset-0 flex items-center justify-center text-stat">99</span>
                         </div>
                         <p class="font-mono text-xs text-muted tracking-wider">Google Lighthouse</p>
                     </div>
@@ -377,18 +389,12 @@
                     <h2 class="font-mono text-sm text-acid tracking-widest uppercase">Tools Used</h2>
                 </div>
                 <div class="flex flex-wrap gap-3">
-                    <span class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid"
-                        class="tool-tag-acid">Figma</span>
-                    <span class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid"
-                        class="tool-tag-acid">Bootstrap</span>
-                    <span class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid"
-                        class="tool-tag-acid">Yii PHP</span>
-                    <span class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid"
-                        class="tool-tag-acid">HTML/CSS</span>
-                    <span class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid"
-                        class="tool-tag-acid">jQuery</span>
-                    <span class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid"
-                        class="tool-tag-acid">Google Analytics</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid tool-tag-acid">Figma</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid tool-tag-acid">Bootstrap</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid tool-tag-acid">Yii PHP</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid tool-tag-acid">HTML/CSS</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid tool-tag-acid">jQuery</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-acid border-opacity-25 text-acid tool-tag-acid">Google Analytics</span>
                 </div>
             </div>
         </div>
@@ -542,18 +548,12 @@
                     <h2 class="font-mono text-sm text-rust tracking-widest uppercase">Tools Used</h2>
                 </div>
                 <div class="flex flex-wrap gap-3">
-                    <span class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust"
-                        class="badge-rust">Figma</span>
-                    <span class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust"
-                        class="badge-rust">Bootstrap</span>
-                    <span class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust"
-                        class="badge-rust">Yii PHP</span>
-                    <span class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust"
-                        class="badge-rust">HTML/CSS</span>
-                    <span class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust"
-                        class="badge-rust">jQuery</span>
-                    <span class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust"
-                        class="badge-rust">SEO</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust badge-rust">Figma</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust badge-rust">Bootstrap</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust badge-rust">Yii PHP</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust badge-rust">HTML/CSS</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust badge-rust">jQuery</span>
+                    <span class="font-mono text-xs px-4 py-2 border border-rust border-opacity-25 text-rust badge-rust">SEO</span>
                 </div>
             </div>
         </div>
@@ -562,21 +562,25 @@
     <!-- ── NEXT PROJECT ── -->
     <section class="py-20 px-8 text-center section-border-top">
         <p class="font-mono text-xs text-muted tracking-widest mb-4 uppercase">Next Project</p>
-        <a href="controlhippo.html" class="font-display text-paper hover:text-acid transition-colors"
-            class="text-section-heading-md">
+        <a href="controlhippo.html" class="font-display text-paper hover:text-acid transition-colors text-section-heading-md">
             ControlHippo →
         </a>
     </section>
 
     <!-- ── FOOTER ── -->
-    <footer class="px-8 py-8 flex items-center justify-between section-border-top">
-        <span class="font-mono text-xs text-muted tracking-widest">© 2025 JIGAR ACHARYA</span>
+    <footer class="px-6 md:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-2 md:gap-0 text-center md:text-left section-border-top">
+        <span class="font-mono text-xs text-muted tracking-widest">© 2026 JIGAR ACHARYA</span>
         <span class="font-mono text-xs text-muted tracking-widest">FULL STACK DESIGNER · TEAM LEAD</span>
         <span class="font-mono text-xs text-acid tracking-widest">MADE WITH PRECISION ✦</span>
     </footer>
 
     <!-- ── JS ── -->
     <script>
+        // Mobile menu
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        }
+
         // Tab switching
         function switchTab(tabId, btn) {
             document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
