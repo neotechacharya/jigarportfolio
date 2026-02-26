@@ -601,3 +601,92 @@ body::before {
     top: -20px;
     left: -20px;
 }
+
+/* ── Mobile Menu Overlay ── */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 10, 15, 0.97);
+    backdrop-filter: blur(20px);
+    z-index: 45;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.mobile-menu.open {
+    display: flex;
+}
+
+.mobile-menu-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 1.25rem;
+    color: #c6f135;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.hamburger-btn {
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 4px;
+}
+
+.hamburger-btn span {
+    display: block;
+    height: 1px;
+    background: #c6f135;
+    transition: width 0.3s ease;
+}
+
+/* ── Responsive Grids ── */
+@media (max-width: 768px) {
+    .grid-2col {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-auto-320 {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-auto-280 {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-auto-260 {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-auto-240 {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-auto-220 {
+        grid-template-columns: 1fr;
+    }
+    .dnonoe {
+        display: none;
+    }
+    .truncate {
+        white-space: normal !important;
+    }
+
+}
+
+/* ── Hide Custom Cursor on Touch Devices ── */
+@media (hover: none) and (pointer: coarse) {
+    .cursor-dot,
+    .cursor-ring {
+        display: none;
+    }
+}
