@@ -43,19 +43,34 @@
     <div class="cursor-ring cursor-init" id="cursorRing"></div>
 
     <!-- ── NAV ── -->
-    <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5 nav-bar">
+    <nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-8 py-5 nav-bar">
         <a href="index.html" class="font-mono text-xs tracking-widest text-acid uppercase">JA/</a>
-        <div class="flex gap-8 font-mono text-xs tracking-wider text-muted">
+        <div class="hidden md:flex gap-8 font-mono text-xs tracking-wider text-muted">
             <a href="index.html#work" class="nav-link hover:text-paper transition-colors">Work</a>
             <a href="index.html#skills" class="nav-link hover:text-paper transition-colors">Skills</a>
             <a href="index.html#about" class="nav-link hover:text-paper transition-colors">About</a>
             <a href="index.html#contact" class="nav-link hover:text-paper transition-colors">Contact</a>
         </div>
         <a href="mailto:jigar@example.com"
-            class="font-mono text-xs tracking-widest px-4 py-2 border border-acid text-acid hover:bg-acid hover:text-ink transition-all duration-300">
+            class="hidden md:block font-mono text-xs tracking-widest px-4 py-2 border border-acid text-acid hover:bg-acid hover:text-ink transition-all duration-300">
             Hire Me →
         </a>
+        <button class="hamburger-btn flex md:hidden" id="menuBtn" onclick="toggleMenu()" aria-label="Open menu">
+            <span style="width:24px"></span>
+            <span style="width:24px"></span>
+            <span style="width:16px"></span>
+        </button>
     </nav>
+
+    <!-- ── MOBILE MENU ── -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" onclick="toggleMenu()" aria-label="Close menu">✕</button>
+        <a href="index.html#work" onclick="toggleMenu()" class="font-mono text-2xl tracking-widest text-muted hover:text-paper transition-colors">Work</a>
+        <a href="index.html#skills" onclick="toggleMenu()" class="font-mono text-2xl tracking-widest text-muted hover:text-paper transition-colors">Skills</a>
+        <a href="index.html#about" onclick="toggleMenu()" class="font-mono text-2xl tracking-widest text-muted hover:text-paper transition-colors">About</a>
+        <a href="index.html#contact" onclick="toggleMenu()" class="font-mono text-2xl tracking-widest text-muted hover:text-paper transition-colors">Contact</a>
+        <a href="mailto:jigar@example.com" class="font-mono text-sm tracking-widest px-6 py-3 border border-acid text-acid hover:bg-acid hover:text-ink transition-all duration-300">Hire Me →</a>
+    </div>
 
     <!-- ── HERO BANNER ── -->
     <section class="pt-28 pb-16 px-8 section-container">
@@ -136,14 +151,14 @@
     <section class="px-8 pb-28 section-container">
 
         <!-- Tab bar -->
-        <div class="flex justify-center gap-0 mb-16 reveal delay-600 tab-border-bottom">
+        <div class="flex flex-col sm:flex-row justify-center gap-0 mb-16 reveal delay-600 tab-border-bottom">
             <button
-                class="tab-btn active font-mono text-sm tracking-widest text-acid px-6 py-4 cursor-pointer bg-transparent border-none outline-none"
+                class="tab-btn active font-mono text-xs sm:text-sm tracking-widest text-acid px-4 sm:px-6 py-3 sm:py-4 cursor-pointer bg-transparent border-none outline-none"
                 data-tab="tab-website" onclick="switchTab('tab-website', this)">
                 Website Development & UI/UX
             </button>
             <button
-                class="tab-btn font-mono text-sm tracking-widest text-muted px-6 py-4 cursor-pointer bg-transparent border-none outline-none"
+                class="tab-btn font-mono text-xs sm:text-sm tracking-widest text-muted px-4 sm:px-6 py-3 sm:py-4 cursor-pointer bg-transparent border-none outline-none"
                 data-tab="tab-webapp" onclick="switchTab('tab-webapp', this)">
                 Web Application & UI/UX
             </button>
@@ -637,14 +652,19 @@
     </section>
 
     <!-- ── FOOTER ── -->
-    <footer class="px-8 py-8 flex items-center justify-between section-border-top">
-        <span class="font-mono text-xs text-muted tracking-widest">© 2025 JIGAR ACHARYA</span>
+    <footer class="px-6 md:px-8 py-8 flex flex-col md:flex-row items-center justify-between gap-2 md:gap-0 text-center md:text-left section-border-top">
+        <span class="font-mono text-xs text-muted tracking-widest">© 2026 JIGAR ACHARYA</span>
         <span class="font-mono text-xs text-muted tracking-widest">FULL STACK DESIGNER · TEAM LEAD</span>
         <span class="font-mono text-xs text-acid tracking-widest">MADE WITH PRECISION ✦</span>
     </footer>
 
     <!-- ── JS ── -->
     <script>
+        // Mobile menu
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+        }
+
         // Tab switching
         function switchTab(tabId, btn) {
             // Hide all panels
